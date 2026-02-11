@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OurCompany Real Estate</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="kpr-calculator.css">
+  <link rel="stylesheet" href="floating-banner.css">
+    <link rel="stylesheet" href="loader.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+
+</head>
+<body>
+
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffd700"/>
+        <stop offset="50%" stop-color="#ffec8b"/>
+        <stop offset="100%" stop-color="#ffd700"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+
+ <!-- PREMIUM LUXURY LOADER -->
+<div id="loader">
+  <div class="spinner-wrapper">
+    <div class="spinner-outer"></div>
+    <div class="spinner-inner"></div>
+  </div>
+  <div class="loader-text">
+    Crafting Your Dream Home
+    <span class="loader-subtext">Your Premium Property Experience</span>
+  </div>
+</div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="brand">
+    <img src="logo.png" alt="Logo PT GABE JAI PRO" class="logo">
+    PT GABE JAI PRO
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="properties.html">Properties</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- Hero Section -->
+  <div id="slider"class="hero-wrap ftco-degree-bg"  data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text justify-content-center align-items-center">
+      <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
+        <div class="text text-center">
+          <!-- Tambahkan ID supaya bisa diubah lewat JS -->
+          <h1 id="hero-title" class="mb-4">The Simplest <br>Way to Find Property</h1>
+          <p id="hero-subtitle" style="font-size: 18px;">
+            Discover your dream home with OurCompany. Trusted by thousands, delivering the best real estate deals for you.
+          </p>
+          
+          <form action="#" class="search-location mt-md-5">
+            <div class="row justify-content-center">
+              <div class="col-lg-10 align-items-end">
+                <div class="form-group">
+                  <div class="form-field d-flex">
+                    <input type="text" class="form-control" placeholder="Search location">
+                    <select id="propertyType" class="form-control ml-2">
+                       <option value="">Property Type</option>
+                        <option value="Rumah Subsidi">Rumah Subsidi</option>
+                        <option value="Rumah Komersil">Rumah Komersil</option>
+                        <option value="Kavling">Kavling</option>
+
+                    </select>
+                    <button type="button" id="searchBtn" class="btn btn-primary ml-2">
+                    <span class="ion-ios-search"></span> Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Services Section -->
+  <section class="ftco-section ftco-no-pb">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 mb-5" style="text-align:center;">
+          <h2 class="heading-section">Our Services</h2>
+          <span class="subheading">How to Buy Your Dream Home</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="service">
+      <div class="icon">🏦</div>
+      <h5>Credit</h5>
+      <p>Mudah dan fleksibel dengan sistem kredit yang sesuai kebutuhan Anda.</p>
+    </div>
+    <div class="service">
+      <div class="icon">💵</div>
+      <h5>Cash Keras</h5>
+      <p>Pembayaran tunai sekaligus untuk transaksi cepat dan aman.</p>
+    </div>
+    <div class="service">
+      <div class="icon">⏳</div>
+      <h5>Cash Tempo</h5>
+      <p>Pembayaran tunai secara bertahap sesuai kesepakatan tempo.</p>
+    </div>
+  </section>
+
+  <!-- Recommended Properties Slider Section -->
+  <section class="recommended">
+    <h2>Recommended Properties</h2>
+    <div class="slider-wrapper">
+      <div class="slider-container">
+        <div class="property">
+          <img src="images/recommend-1.jpg" alt="Grannada">
+          <div class="text">
+            <p class="price">Rp 166.000.000 <small>/unit</small></p>
+            <ul>
+              <li>🛏 2</li>
+              <li>🛁 1</li>
+              <li>🛋  1</li>
+              <li>🧑‍🤝‍🧑 1</li>
+              <li>Type 36/72</li>
+
+            </ul>
+            <h5>Grand Nadda</h5>
+            <span>Lampung Selatan</span>
+            <a href="#" class="btn-details">View Details</a>
+          </div>
+        </div>
+
+        <div class="property">
+          <img src="images/recommend-2.jpg" alt="Oceanfront Apartment">
+          <div class="text">
+            <p class="price">Rp 166.000.000<small>/unit</small></p>
+            <ul>
+               <li>🛏 2</li>
+              <li>🛁 1</li>
+              <li>🛋  1</li>
+              <li>🧑‍🤝‍🧑 1</li>
+              <li>Type 36/72</li>
+            </ul>
+            <h5>Samara Residence 2</h5>
+            <span>Lampung Selatan</span>
+            <a href="#" class="btn-details">View Details</a>
+          </div>
+        </div>
+
+        <div class="property">
+          <img src="images/recommend-3.jpg" alt="Puri Gunung Langgar 1">
+          <div class="text">
+            <p class="price">Rp 166.000.000 <small>/unit</small></p>
+            <ul>
+               <li>🛏 2</li>
+              <li>🛁 1</li>
+              <li>🛋  1</li>
+              <li>🧑‍🤝‍🧑 1</li>
+              <li>Type 36/72</li>
+            </ul>
+            <h5>Puri Gunung Langgar 1</h5>
+            <span>Lampung Selatan</span>
+            <a href="#" class="btn-details">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- WHO WE ARE Section -->
+<section id="who-we-are">
+  <div class="who-container">
+    
+    <!-- Left Content -->
+    <div class="who-left">
+      <p class="who-subtitle">GET TO KNOW US</p>
+      <h2 class="who-title">
+        PT GABE JAI PRO<br>
+        Mewujudkan Hunian Impian . <br>
+        Hadirkan Masa Depan Lebih Baik
+      </h2>
+      <p class="who-desc">
+        Hadir sebagai kota modern dengan hunian berkualitas dan fasilitas terbaik.
+        Lokasi strategis di Lampung, investasi masa depan yang menjanjikan..
+      </p>
+    </div>
+
+    <!-- Right Stats -->
+    <div class="who-stats">
+  <div class="stat-box">
+    <h3><span class="number" data-target="2500">0</span> <span>Unit</span></h3>
+    <p>Rumah Subsidi</p>
+  </div>
+  <div class="stat-box">
+    <h3><span class="number" data-target="1100">0</span> <span>Unit</span></h3>
+    <p>Rumah Komersil</p>
+  </div>
+  <div class="stat-box">
+    <h3><span class="number" data-target="59">0</span> <span>Unit</span></h3>
+    <p>Rumah Cluster</p>
+  </div>
+  <div class="stat-box">
+    <h3><span class="number" data-target="10">0</span> <span>Unit</span></h3>
+    <p>Tanah Kavling</p>
+  </div>
+</div>
+</section>
+ <!-- About Section -->
+  <section class="about">
+    <div class="about-wrapper">
+      <div class="about-image">
+        <img src="images/about-image.png" alt="About Image">
+      </div>
+      <div class="about-text">
+         <h2>PT GABE JAI PRO.</h2>
+        <p>
+         Visi perusahaan kami adalah menjadi perusahaan agen properti terpercaya dan terdepandi indonesia yang menyediakan solusi properti terbaik dengan mengedepankan 
+         integritas, kepuasan pelanggan, dan inovasi  dalam setiap layanan.
+        </p>
+        <p>
+          Misi kami adalah memberikan layanan properti yang profesional dan transparan kepada  pelanggan untuk memastikan kepuasan 
+          dan keberhasilan transanksi, mengembangkan portofolio properti yang berkualiatas, menawarkan berbagai pilihan properti terbaik yang sesuai dengan kebutuhan anggaran pelanggan 
+        </p>
+        <p>
+          berkomitmen untuk selalu mengedepankan prinsip integritas  dan etika bisnis, sehingga  setiap transanksi berjalan dengan dengan adil dan transparan dan
+          menggunakan teknologi dan inovasi terbaru untuk mempermudah proses pencarian,pembelian, dan penjualan properti, serta memberikan pengalama yang efisien bagi pelanggan.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Properties Section -->
+<section class="properties">
+  <!-- Wrapper untuk cards -->
+  <div class="cards-wrapper" id="content">
+    <div class="property">
+      <img src="images/work-1.jpg" alt="Puri Langgar 2">
+      <div class="text">
+        <p class="price">$3,050 <small>/mo</small></p>
+        <ul>
+          <li>🛏 2</li>
+          <li>🛁 1</li>
+          <li>🛋 1</li>
+          <li>🧑‍🤝‍🧑 1</li>
+          <li>Type 36/72</li>
+        </ul>
+        <h5>Puri Gunung Langgar 2</h5>
+        <span>Lampung Selatan</span>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/work-2.jpg" alt="Family Paradise House">
+      <div class="text">
+        <p class="price">$4,500 <small>/mo</small></p>
+        <ul>
+          <li>🛏 2</li>
+          <li>🛁 1</li>
+          <li>🛋 1</li>
+          <li>🧑‍🤝‍🧑 1</li>
+          <li>Type 36/72</li>
+        </ul>
+        <h5>Grand Sulton</h5>
+        <span>Lampung Selatan</span>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/work-3.jpg" alt="Modern Luxury Condo">
+      <div class="text">
+        <p class="price">$2,800 <small>/mo</small></p>
+        <ul>
+          <li>🛏 2</li>
+          <li>🛁 1</li>
+          <li>🛋 1</li>
+          <li>🧑‍🤝‍🧑 1</li>
+          <li>Type 36/72</li>
+        </ul>
+        <h5>Sukarame Permai</h5>
+        <span>Bandar Lampung</span>
+        <a href="#" class="btn-details">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination tetap di dalam section -->
+  <div class="pagination">
+    <a href="#" class="prev">&laquo;</a>
+    <a href="#" class="page active">1</a>
+    <a href="#" class="page">2</a>
+    <a href="#" class="page">3</a>
+    <a href="#" class="next">&raquo;</a>
+  </div>
+</section>
+   <!-- Testimonial Section -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="section-header" style="text-align:center; margin-bottom:40px;">
+        <span class="subheading">What They Say</span>
+        <h2>Client Experiences</h2>
+      </div>
+
+      <div class="testimonial-wrapper">
+        <div class="testimonial-item">
+          <p>
+            Sebagai Marketing Manager, saya bangga dengan cara PT GABE JAI PRO menghadirkan solusi yang tepat untuk klien. Strategi yang kami jalankan selalu didukung penuh oleh tim, sehingga setiap proyek dapat berjalan efektif dan memberikan hasil yang nyata.
+          </p>
+          <div class="client">
+            <img src="images/client-1.jpg" alt="Roger Scott">
+            <div class="client-info">
+              <h5>Novi Safitri</h5>
+              <span>Marketing Maneger</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <p>
+            Sebagai Admin Manager, saya merasakan langsung bagaimana PT GABE JAI PRO membangun lingkungan kerja yang profesional sekaligus kekeluargaan. Setiap tantangan dihadapi bersama, dan setiap keberhasilan dirayakan sebagai tim. Inilah yang membuat kami bangga menjadi bagian dari perusahaan ini.
+          </p>
+          <div class="client">
+            <img src="images/client-2.jpg" alt="Roger Scott">
+            <div class="client-info">
+              <h5>Laras Dwi M.J</h5>
+              <span>Admin Maneger</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-item">
+          <p>
+           Bekerja sama dengan PT GABE JAI PRO benar-benar menyenangkan. Timnya profesional, komunikatif, dan selalu memberikan solusi terbaik..
+          </p>
+          <div class="client">
+            <img src="images/client-3.jpg" alt="Roger Scott">
+            <div class="client-info">
+              <h5>Achmad Zainul Abiddin</h5>
+              <span>Supervisor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots navigation -->
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+<!-- FAQ Section -->
+<section id="faq">
+  <div class="faq-container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Apa saja keunggulan yang didapatkan dari PT GABE JAI PRO?
+        <span class="arrow">›</span>
+      </button>
+      <div class="faq-answer">
+        <p>Keunggulan PT GABE JAI PRO adalah perusahaan yang selalu menyediakan hunian dengan lokasi strategis dan fasilitas lengkap.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Dimana alamat lengkap PT GABE JAI PRO ?
+        <span class="arrow">›</span>
+      </button>
+      <div class="faq-answer">
+        <p>PT GABE JAI PRO berada di Aster Rd, Sukarame – Lampung – 35131 Indonesia.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Berapa harga rumah di PT GABE JAI PRO ?
+        <span class="arrow">›</span>
+      </button>
+      <div class="faq-answer">
+        <p>Harga rumah di PT GABE JAI PRO bervariasi tergantung tipe unit dan lokasi cluster.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Apa saja metode pembayaran yang bisa dilakukan?
+        <span class="arrow">›</span>
+      </button>
+      <div class="faq-answer">
+        <p>Metode pembayaran bisa melalui KPR, tunai bertahap, maupun tunai keras sesuai ketentuan.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Bagaimana cara menghitung simulasi KPR?
+        <span class="arrow">›</span>
+      </button>
+      <div class="faq-answer">
+        <p>Gunakan fitur “Simulasi KPR” yang tersedia di website. Masukkan harga properti, uang muka, suku bunga, dan jangka waktu cicilan. Sistem akan menghitung estimasi cicilan bulanan untukmu.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Apa itu KPR dan apakah website ini menyediakan informasinya?
+        <span class="arrow">›</span>
+      </button>
+      <div class="faq-answer">
+        <p>KPR (Kredit Pemilikan Rumah) adalah fasilitas pembiayaan untuk membeli rumah dengan cicilan bulanan. Di website ini, kamu bisa menemukan panduan lengkap mengenai KPR, perhitungan simulasi cicilan, serta syarat dan ketentuan dari berbagai bank.</p>
+      </div>
+    </div>
+</section>
+    <!-- Blog Section -->
+  <section class="blog">
+    <div class="container">
+      <div class="section-header" style="text-align:center; margin-bottom:40px;">
+        <span class="subheading">Blog</span>
+        <h2>Recent Blog</h2>
+      </div>
+
+      <div class="blog-wrapper">
+        <div class="blog-item">
+          <img src="images/blog-1.jpg" alt="Blog 1">
+          <div class="blog-content">
+            <span class="meta">JULY 24, 2019 ADMIN 3</span>
+            <h5><a href="#">Rumah Idaman Mulai 500 Ribu, Siap Huni Sampai Terima Kunci</a></h5>
+            <p>Kini memiliki rumah tidak lagi sekadar impian, karena hanya dengan 500 ribu rupiah Anda sudah bisa punya hunian modern minimalis sampai terima kunci, lengkap dengan lokasi strategis, desain nyaman, dan proses mudah, menjadikannya pilihan tepat baik untuk tempat tinggal maupun investasi masa depan.
+              .</p>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <img src="images/blog-2.jpg" alt="Blog 2">
+          <div class="blog-content">
+            <span class="meta">JULY 24, 2019 ADMIN 3</span>
+            <h5><a href="#">Booking Rumah Impian Hanya 1 Juta, Siap Langsung Proses!</a></h5>
+            <p>Kini memiliki hunian nyaman bukan lagi sekadar mimpi, karena hanya dengan 1 juta rupiah Anda sudah bisa melakukan booking rumah modern minimalis di lokasi strategis, lengkap dengan desain elegan, proses mudah, serta cicilan terjangkau, sehingga lebih cepat mewujudkan impian memiliki rumah sendiri sekaligus investasi masa depan.
+               .</p>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <img src="images/blog-3.jpg" alt="Blog 3">
+          <div class="blog-content">
+            <span class="meta">JULY 24, 2019 ADMIN 3</span>
+            <h5><a href="#">Miliki Rumah Impian Tanpa DP, Proses Mudah & Cepat!</a></h5>
+            <p>Kini memiliki hunian tidak lagi terhalang biaya awal yang besar, karena Anda bisa mendapatkan rumah tanpa DP dengan desain modern minimalis, lokasi strategis, dan proses administrasi yang sederhana, sehingga lebih mudah bagi siapa saja untuk segera mewujudkan impian memiliki rumah sendiri maupun investasi properti masa depan..</p>
+          </div>
+        </div>
+  </section>
+ <section class="newsletter-section">
+  <div class="newsletter-container">
+    <h2 class="title">📩 News That Matters</h2>
+    <p class="subtitle">
+      Enter your email to receive the freshest updates, articles, and special surprises—directly from us to you.
+    </p>
+
+    <form id="newsletterForm" class="newsletter-form">
+      <input type="email" id="emailInput" placeholder="Your email address..." required>
+      <button type="submit">Keep Me Updated</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+</section>
+<script>
+  // 👉 Ganti dengan endpoint Formspree punyamu
+  const scriptURL = "https://formspree.io/f/manpwrnz";  
+  const form = document.getElementById("newsletterForm");
+  const message = document.getElementById("message");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const email = document.getElementById("emailInput").value;
+
+    fetch(scriptURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email })
+    })
+    .then(res => {
+      if (res.ok) {
+        message.textContent = "✅ Terima kasih, email kamu berhasil dikirim!";
+        message.style.color = "limegreen";
+        form.reset();
+      } else {
+        message.textContent = "❌ Gagal menyimpan email.";
+        message.style.color = "red";
+      }
+    })
+    .catch(err => {
+      console.error("Error!", err);
+      message.textContent = "❌ Terjadi kesalahan koneksi.";
+      message.style.color = "red";
+    });
+  });
+</script>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left Section -->
+      <div class="footer-left">
+        <h2>Hubungi Kami</h2>
+        <p><strong>Phone</strong></p>
+        <p>+62 887-4330-83227<br>+62 811-725-545</p>
+        <p>Aster 1, Sukarame, Lampung<br>Indonesia</p>
+        <p><strong>WhatsApp (Marketing)</strong><br>
+          <a href="https://wa.me/62811725545" target="_blank">+62811725545</a>
+        </p>
+        <p><strong>Email</strong><br>
+          <a href="">PT GABE JAI PRO @gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="footer-middle">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="#">About </a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Property</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Right Section -->
+      <div class="footer-right">
+        <h3>Others</h3>
+        <p><a href="#">Privacy Policy</a></p>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <!-- Sosial Media -->
+<div class="social-links">
+  <a href="https://www.facebook.com/pt.gabejaipro" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://www.instagram.com/pt.gabejaipro?igsh=MWNtanM2NXlhZjJ1dg==" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+ <a href="#"><i class="fab fa-youtube"></i></a>
+  </a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 – PT GABE JAI PRO All rights reserved. | Term of Services | Privacy Policy</p>
+    </div>
+  </footer>
+  <script>
+
+   document.addEventListener('DOMContentLoaded', function() {
+
+  // ===== Hero background =====
+  const hero = document.getElementById('alider');
+  if (hero) {
+    const bgImage = hero.getAttribute('data-bg');
+    hero.style.backgroundImage = `url('${bgImage}')`;
+  }
+
+  // ===== Slider navigation =====
+  const slider = document.querySelector('.slider-container');
+  window.slideLeft = function() { 
+    if (slider) slider.scrollBy({ left: -320, behavior: 'smooth' }); 
+  };
+  window.slideRight = function() { 
+    if (slider) slider.scrollBy({ left: 320, behavior: 'smooth' }); 
+  };
+
+  // ===== FAQ Accordion =====
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    if (question) {
+      question.addEventListener("click", () => {
+        // Tutup semua item lain dulu
+        faqItems.forEach(el => {
+          if (el !== item) el.classList.remove("active");
+        });
+        // Toggle item yang diklik
+        item.classList.toggle("active");
+      });
+    }
+  });
+
+  // ===== Tombol Search =====
+  const searchBtn = document.getElementById('searchBtn');
+  const propertySelect = document.getElementById('propertyType');
+
+  if (searchBtn && propertySelect) {
+    searchBtn.addEventListener('click', function() {
+      const selectedText = propertySelect.value.trim();
+
+      switch(selectedText) {
+        case "Rumah Subsidi":
+          window.location.href = "listing-rumah-subsidi.html";
+          break;
+        case "Rumah Komersil":
+          window.location.href = "listing-rumah-komersil.html";
+          break;
+        case "Kavling":
+          window.location.href = "listing-tanah-kavling.html";
+          break;
+        default:
+          alert("Silakan pilih tipe properti terlebih dahulu!");
+      }
+    });
+  }
+
+});
+
+ // Tunggu sampai semua konten utama halaman selesai dimuat
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+      // Tambahkan delay kecil untuk efek cinematic smooth
+      setTimeout(() => {
+        loader.classList.add('hide');
+      }, 800); // 0.8 detik delay sebelum fade out
+    }
+  });
+
+</script>
+
+  <script src="pagination.js" defer></script>
+  <script src="chatbot-loader.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="kpr-calculator.js" defer></script>
+  <script src="floating-banner.js" defer></script>
+  <script src="counter.js" defer></script>
+  <script src="dot.js" defer></script>
+  <script src="Reveal.js" defer></script>
+  <script src="loader.js" defer></script>
+
+
+</body>
+</html>

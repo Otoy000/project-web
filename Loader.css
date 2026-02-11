@@ -1,0 +1,102 @@
+/* ===== Ultra-Premium Cinematic Estate Loader – Fullscreen ===== */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #0b0f1f, #1e2530);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease, visibility 1s ease, transform 1s ease;
+  animation: bgPulse 8s infinite alternate;
+}
+
+/* Background gradient pulse animation */
+@keyframes bgPulse {
+  0% { background: linear-gradient(135deg, #0b0f1f, #1e2530); }
+  50% { background: linear-gradient(135deg, #101426, #232c3d); }
+  100% { background: linear-gradient(135deg, #0b0f1f, #1e2530); }
+}
+
+/* Double spinner wrapper */
+.spinner-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+/* Outer spinner */
+.spinner-outer {
+  width: 80px;
+  height: 80px;
+  border: 4px solid rgba(255, 215, 0, 0.15);
+  border-top-color: #ffd700;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 0; left: 0;
+  filter: drop-shadow(0 0 12px #ffd700);
+}
+
+/* Inner spinner */
+.spinner-inner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 215, 0, 0.15);
+  border-bottom-color: #ffd700;
+  border-radius: 50%;
+  animation: spinReverse 1.5s linear infinite;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 8px #ffd700);
+}
+
+/* Spinner animations */
+@keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+@keyframes spinReverse { 0% { transform: rotate(0deg);} 100% { transform: rotate(-360deg);} }
+
+/* Loader text / cinematic tagline */
+.loader-text {
+  margin-top: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #ffd700;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeInText 2s forwards 0.5s, shimmer 3s infinite;
+  background: linear-gradient(
+    90deg, 
+    rgba(255, 215, 0, 0.9) 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    rgba(255, 215, 0, 0.9) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fade-in + slide-up for text */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Shimmer effect for text */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Hide loader cinematic effect */
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.95);
+}
