@@ -39,261 +39,310 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="about-hero">
-      <img
-        src="images/services.png"
-        alt="About Hero"
-        style="
-          width: 100%;
-          height: 100vh;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: -1;
-        "
-      />
-      <h1>Services</h1>
+    <section class="services-hero">
+      <img src="../images/services.png" alt="Services Hero" class="hero-bg" />
+
+      <div class="hero-header-text">
+        <h1>Our Services</h1>
+        <p class="breadcrumb">Home &gt; Services</p>
+      </div>
     </section>
 
-    <!-- SERVICES CONTENT -->
-    <section class="hero-content container">
-      <!-- Service Card -->
-      <div class="hero-card">
-        <h1>Solusi lengkap untuk jual, beli & sewa properti</h1>
-        <p class="lead">
-          Kami membantu pemilik dan pembeli melalui proses yang jelas, cepat,
-          dan aman — mulai dari pemasaran properti hingga penandatanganan
-          kontrak.
-        </p>
-        <div
-          style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px"
-        >
-          <a class="btn" href="#contact">Konsultasi Gratis</a>
-          <a class="btn alt" href="#services">Lihat Layanan</a>
-        </div>
+    <div class="services-container">
+      <section class="hero-content">
+        <div class="hero-card">
+          <h1>Solusi lengkap untuk jual, beli & sewa properti</h1>
+          <p class="lead">
+            Kami membantu pemilik dan pembeli melalui proses yang jelas, cepat,
+            dan aman — mulai dari pemasaran properti hingga penandatanganan
+            kontrak.
+          </p>
 
-        <div class="services" id="services" style="margin-top: 20px">
-          <article class="service">
-            <div style="display: flex; gap: 12px; align-items: center">
+          <div class="cta-buttons">
+            <a class="btn" href="#contact">Konsultasi Gratis</a>
+            <a class="btn alt" href="#services-list">Lihat Layanan</a>
+          </div>
+
+          <div class="services-grid" id="services-list">
+            <article class="service-item">
               <div class="icon">🏷️</div>
-              <div>
+              <div class="service-text">
                 <h3>Listing & Pemasaran</h3>
                 <p>
                   Foto profesional, tur virtual 3D, pemasangan di portal
                   properti & iklan target.
                 </p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="service">
-            <div style="display: flex; gap: 12px; align-items: center">
+            <article class="service-item">
               <div class="icon">🤝</div>
-              <div>
+              <div class="service-text">
                 <h3>Negosiasi & Penjualan</h3>
                 <p>
                   Perwakilan negosiasi untuk dapatkan harga terbaik dan proses
                   balik nama dokumen.
                 </p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="service">
-            <div style="display: flex; gap: 12px; align-items: center">
+            <article class="service-item">
               <div class="icon">🏢</div>
-              <div>
+              <div class="service-text">
                 <h3>Manajemen Properti</h3>
                 <p>
                   Pelayanan sewa, pemeliharaan, pemungutan sewa dan laporan
                   keuangan bulanan.
                 </p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="service">
-            <div style="display: flex; gap: 12px; align-items: center">
+            <article class="service-item">
               <div class="icon">📊</div>
-              <div>
+              <div class="service-text">
                 <h3>Penilaian & Konsultasi</h3>
                 <p>
                   Estimasi nilai pasar, analisis lokasi, dan strategi investasi
                   properti.
                 </p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="service">
-            <div style="display: flex; gap: 12px; align-items: center">
+            <article class="service-item">
               <div class="icon">📝</div>
-              <div>
+              <div class="service-text">
                 <h3>Legal & Dokumen</h3>
                 <p>
                   Pendampingan legal, cek sertifikat, AJB, balik nama, dan
                   pengurusan pajak.
                 </p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="service">
-            <div style="display: flex; gap: 12px; align-items: center">
+            <article class="service-item">
               <div class="icon">💼</div>
-              <div>
+              <div class="service-text">
                 <h3>Investor Services</h3>
                 <p>
                   Penawaran portofolio, due diligence, dan manajemen transaksi
                   untuk investor.
                 </p>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
-      </div>
 
-      <!-- Contact Form -->
-      <aside>
-        <div class="contact-form">
-          <h3 id="contact">Minta Penawaran</h3>
-          <form
-            id="penawaranForm"
-            action="https://formspree.io/f/yourFormID"
-            method="POST"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Nama lengkap"
-              required
+        <aside class="contact-aside">
+          <div class="contact-form-box">
+            <h3 id="contact">Minta Penawaran</h3>
+            <form
+              id="penawaranForm"
+              action="https://formspree.io/f/yourFormID"
+              method="POST"
+            >
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nama lengkap"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" placeholder="Nomor telepon" />
+              </div>
+              <div class="form-group">
+                <select name="service">
+                  <option value="Rumah Subsidi">Rumah Subsidi</option>
+                  <option value="Rumah Komersil">Rumah Komersil</option>
+                  <option value="Kavling">Kavling</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Deskripsi singkat / lokasi properti"
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn full-width" type="submit">Kirim</button>
+                <button class="btn alt full-width" type="button" id="resetBtn">
+                  Reset
+                </button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </section>
+
+      <section class="process" aria-label="Proses kami">
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <strong>Konsultasi</strong>
+          <span>Analisis kebutuhan & penilaian awal</span>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <strong>Pemasaran</strong>
+          <span>Listing, foto, tur virtual</span>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <strong>Negosiasi</strong>
+          <span>Menjembatani pemilik & pembeli</span>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-file-signature"></i>
+          </div>
+          <strong>Penandatanganan</strong>
+          <span>Pendampingan legal & serah terima</span>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="testimonial-card">
+          <div class="quote-icon">“</div>
+          <p class="testimonial-text">
+            Laku 2 minggu setelah difoto profesional — proses cepat dan
+            komunikasinya jelas.
+          </p>
+          <div class="testimonial-footer">
+            <img
+              src="../images/Novi.PNG"
+              alt="Foto Novi"
+              class="testimonial-photo"
             />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="tel" name="phone" placeholder="Nomor telepon" />
-            <select name="service">
-              <option value="Rumah Subsidi">Rumah Subsidi</option>
-              <option value="Rumah Komersil">Rumah Komersil</option>
-              <option value="Kavling">Kavling</option>
-            </select>
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Deskripsi singkat / lokasi properti"
-            ></textarea>
-            <div class="form-actions">
-              <button class="btn" type="submit">Kirim</button>
-              <button class="btn alt" type="button" id="resetBtn">Reset</button>
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Novi</h3>
+              <span class="testimonial-role">Manager</span>
             </div>
-          </form>
+          </div>
         </div>
-      </aside>
-    </section>
-    <!-- Process -->
-    <section class="process" aria-label="Proses kami">
-      <div class="step">
-        <i class="fas fa-headset icon"></i>
-        <strong>Konsultasi</strong>
-        <span>Analisis kebutuhan & penilaian awal</span>
-      </div>
-      <div class="step">
-        <i class="fas fa-camera icon"></i>
-        <strong>Pemasaran</strong>
-        <span>Listing, foto, tur virtual</span>
-      </div>
-      <div class="step">
-        <i class="fas fa-handshake icon"></i>
-        <strong>Negosiasi</strong>
-        <span>Menjembatani pemilik & pembeli</span>
-      </div>
-      <div class="step">
-        <i class="fas fa-file-signature icon"></i>
-        <strong>Penandatanganan</strong>
-        <span>Pendampingan legal & serah terima</span>
-      </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Laku 2 minggu setelah difoto profesional — proses cepat dan
-          komunikasinya jelas."
-        </p>
-        <div class="testimonial-photo">
-          <img src="images/Novi.PNG" alt="Foto Novi" />
+        <div class="testimonial-card">
+          <div class="quote-icon">“</div>
+          <p class="testimonial-text">
+            Laporan investasi dan rekomendasinya membantu saya menambah
+            portofolio properti komersial.
+          </p>
+          <div class="testimonial-footer">
+            <img
+              src="../images/Achmad.PNG"
+              alt="Foto Achmad"
+              class="testimonial-photo"
+            />
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Achmad</h3>
+              <span class="testimonial-role">Supervisor</span>
+            </div>
+          </div>
         </div>
-        <h3 class="testimonial-name">Novi</h3>
-        <span class="testimonial-role">Manager</span>
-      </div>
+      </section>
 
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Laporan investasi dan rekomendasinya membantu saya menambah
-          portofolio properti komersial."
-        </p>
-        <div class="testimonial-photo">
-          <img src="images/Achmad.PNG" alt="Foto Achmad" />
+      <div class="cta-box">
+        <div class="cta-text">
+          <h3>Siap menjual atau menyewa properti Anda?</h3>
+          <p>
+            Dapatkan estimasi gratis dan rencana pemasaran yang disesuaikan.
+          </p>
         </div>
-        <h3 class="testimonial-name">Achmad</h3>
-        <span class="testimonial-role">Supervisor</span>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta">
-      <div>
-        <h3>Siap menjual atau menyewa properti Anda?</h3>
-        <p>Dapatkan estimasi gratis dan rencana pemasaran yang disesuaikan.</p>
-      </div>
-      <div>
-        <a class="btn" href="#contact">Minta Estimasi Gratis</a>
+        <div class="cta-action">
+          <a class="btn large" href="#contact">Minta Estimasi Gratis</a>
+        </div>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer-left">
-          <h2>Hubungi Kami</h2>
-          <p><strong>Phone</strong></p>
-          <p>+62 887-4330-83227<br />+62 811-725-545</p>
-          <p>Aster 1 Sukarame Lampung<br />Indonesia</p>
-          <p>
-            <strong>WhatsApp (Marketing)</strong><br />
-            <a href="https://wa.me/62811725545" target="_blank">+62811725545</a>
+        <div class="footer-col footer-left">
+          <h2 class="footer-brand">PT GABE JAI PRO</h2>
+          <p class="company-desc">
+            Mewujudkan hunian impian dengan layanan properti terbaik,
+            terpercaya, dan profesional di Indonesia.
           </p>
-          <p>
-            <strong>Email</strong><br />
-            <a href="">PT GABE JAI PRO @gmail.com</a>
-          </p>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Aster 1, Sukarame, Lampung, Indonesia</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+62 887-4330-83227</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/62811725545" target="_blank"
+                >+62 811-725-545</a
+              >
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:pt.gabejaipro@gmail.com"
+                >pt.gabejaipro@gmail.com</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="footer-middle">
-          <h3>Menu</h3>
+
+        <div class="footer-col footer-middle">
+          <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Properties</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about/About.html">About Us</a></li>
+            <li><a href="services/services.html">Our Services</a></li>
+            <li><a href="properties/properties.html">Properties</a></li>
+            <li><a href="blog/blog.html">Latest Blog</a></li>
+            <li><a href="contact/contact.html">Contact Us</a></li>
           </ul>
         </div>
-        <div class="footer-right">
-          <h3>Others</h3>
-          <p><a href="#">Privacy Policy</a></p>
+
+        <div class="footer-col footer-right">
           <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/pt.gabejaipro"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/pt.gabejaipro?igsh=MWNtanM2NXlhZjJ1dg=="
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+
+          <div class="legal-links">
+            <h3>Legal</h3>
+            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="#">Terms & Conditions</a></p>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>
-          © 2025 – PT GABE JAI PRO All rights reserved. | Term of Services |
-          Privacy Policy
+          &copy; 2025 <strong>PT GABE JAI PRO</strong>. All rights reserved.
         </p>
       </div>
     </footer>
