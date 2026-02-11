@@ -41,16 +41,19 @@
   <!-- Navbar -->
   <nav>
     <div class="brand">
-    <img src="logo.png" alt="Logo PT GABE JAI PRO" class="logo">
+    <img  src="images/logo/logo.png" alt="Logo PT GABE JAI PRO" class="logo">
     PT GABE JAI PRO
   </div>
-  <ul>
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span class="hamburger"></span>
+  </button>
+  <ul class="nav-menu">
     <li><a href="index.html">Home</a></li>
-    <li><a href="About.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="properties.html">Properties</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about/About.html">About</a></li>
+    <li><a href="services/services.html">Services</a></li>
+    <li><a href="properties/properties.html">Properties</a></li>
+    <li><a href="blog/blog.html">Blog</a></li>
+    <li><a href="contact/contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -646,6 +649,20 @@
 
 </script>
 
+  <script>
+    // Hamburger menu toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('open');
+      this.classList.toggle('active');
+    });
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-menu').classList.remove('open');
+        document.querySelector('.nav-toggle').classList.remove('active');
+      });
+    });
+  </script>
   <script src="pagination.js" defer></script>
   <script src="chatbot-loader.js" defer></script>
   <script src="script.js" defer></script>

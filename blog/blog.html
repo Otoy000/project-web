@@ -6,26 +6,29 @@
   <title>Blog</title>
   <!-- Link CSS -->
   <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <!-- Navbar -->
- <nav>
+<nav>
     <div class="brand">
-      <img src="logo.png" alt="Logo PT GABE JAI PRO" class="logo">
-      PT GABE JAI PRO
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="About.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="properties.html">Properties</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <img  src="../images/logo/logo.png" alt="Logo PT GABE JAI PRO" class="logo">
+    PT GABE JAI PRO
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span class="hamburger"></span>
+  </button>
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about/About.html">About</a></li>
+      <li><a href="../services/services.html">Services</a></li>
+      <li><a href="../properties/properties.html">Properties</a></li>
+      <li><a href="../blog/blog.html">Blog</a></li>
+      <li><a href="../contact/contact.html">Contact</a></li>
     </ul>
-  </nav>
+</nav>
 
   <!-- About Hero Section -->
   <section class="about-hero">
@@ -101,5 +104,20 @@
     </div>
   </footer>
   <script src="blog.js"></script>
+
+   <script>
+    // Hamburger menu toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('open');
+      this.classList.toggle('active');
+    });
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-menu').classList.remove('open');
+        document.querySelector('.nav-toggle').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
