@@ -1,123 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="blog.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-
-  <!-- Navbar -->
-<nav>
-    <div class="brand">
-    <img  src="../images/logo/logo.png" alt="Logo PT GABE JAI PRO" class="logo">
-    PT GABE JAI PRO
-  </div>
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    <span class="hamburger"></span>
-  </button>
-    <ul class="nav-menu">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../about/About.html">About</a></li>
-      <li><a href="../services/services.html">Services</a></li>
-      <li><a href="../properties/properties.html">Properties</a></li>
-      <li><a href="../blog/blog.html">Blog</a></li>
-      <li><a href="../contact/contact.html">Contact</a></li>
-    </ul>
-</nav>
-
-  <!-- About Hero Section -->
-  <section class="about-hero">
-    <img src="images/blog.PNG" alt="About Hero" style="width:100%; height:100vh; object-fit:cover; position:absolute; top:0; left:0; z-index:-1;">
-    <h1>Blog</h1>
-  </section>
-  
-  <!-- Blog Section -->
-  <section class="blog">
-  <div class="container">
-    <div class="section-header" style="text-align:center; margin-bottom:40px;">
-      <span class="subheading">Blog</span>
-      <h2>Recent Blog</h2>
-    </div>
-    <div id="content"></div>
-      <div class="blog-wrapper">
-      <!-- Pagination -->
-      <div class="pagination">
-        <a href="#" class="prev">&laquo; Prev</a>
-        <a href="#" class="page active">1</a>
-        <a href="#" class="page">2</a>
-        <a href="#" class="page">3</a>
-        <a href="#" class="next">Next &raquo;</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="blog.css" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="brand">
+        <img
+          src="../images/logo/logo.png"
+          alt="Logo PT GABE JAI PRO"
+          class="logo"
+        />
+        PT GABE JAI PRO
       </div>
-    </div>
-  </section>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/About.html">About</a></li>
+        <li><a href="../services/services.html">Services</a></li>
+        <li><a href="../properties/properties.html">Properties</a></li>
+        <li><a href="../blog/blog.html">Blog</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Left Section -->
-      <div class="footer-left">
-        <h2>Hubungi Kami</h2>
-        <p><strong>Phone</strong></p>
-        <p>+62 887-4330-83227<br>+62811725545</p>
-        <p>Office Park 1 CitraLand Surabaya<br>Indonesia</p>
-        <p><strong>WhatsApp (Marketing)</strong><br>
-          <a href="https://wa.me/62811725545" target="_blank">+62811725545</a>
-        </p>
-        <p><strong>Email</strong><br>
-          <a href="">PT GABE JAI PRO @gmail.com</a>
-        </p>
+    <!-- About Hero Section -->
+    <section class="blog-hero">
+      <img src="../images/blog.PNG" alt="Blog Hero" class="hero-bg" />
+
+      <div class="hero-header-text">
+        <h1>Our Blog</h1>
+        <p class="breadcrumb">Home &gt; Blog</p>
       </div>
+    </section>
 
-      <!-- Middle Section -->
-      <div class="footer-middle">
-        <h3>Menu</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Properties</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+    <section class="blog-section">
+      <div class="blog-container">
+        <div class="section-header">
+          <span class="subheading">Our Blog</span>
+          <h2 class="section-title">Recent Articles</h2>
+        </div>
 
-      <!-- Right Section -->
-      <div class="footer-right">
-        <h3>Others</h3>
-        <p><a href="#">Privacy Policy</a></p>
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <div id="blog-content">
+          <p style="text-align: center">Memuat artikel...</p>
+        </div>
+
+        <div class="pagination" id="pagination">
+          <a href="#" class="prev" id="btn-prev">&laquo; Prev</a>
+
+          <div id="page-numbers" style="display: contents">
+            <a href="#" class="page active" data-page="1">1</a>
+            <a href="#" class="page" data-page="2">2</a>
+            <a href="#" class="page" data-page="3">3</a>
+          </div>
+
+          <a href="#" class="next" id="btn-next">Next &raquo;</a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="footer-bottom">
-      <p>© 2025 – PT GABE JAI PRO All rights reserved. | Term of Services | Privacy Policy</p>
-    </div>
-  </footer>
-  <script src="blog.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col footer-left">
+          <h2 class="footer-brand">PT GABE JAI PRO</h2>
+          <p class="company-desc">
+            Mewujudkan hunian impian dengan layanan properti terbaik,
+            terpercaya, dan profesional di Indonesia.
+          </p>
 
-   <script>
-    // Hamburger menu toggle
-    document.querySelector('.nav-toggle').addEventListener('click', function() {
-      document.querySelector('.nav-menu').classList.toggle('open');
-      this.classList.toggle('active');
-    });
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-menu a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.querySelector('.nav-menu').classList.remove('open');
-        document.querySelector('.nav-toggle').classList.remove('active');
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Aster 1, Sukarame, Lampung, Indonesia</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+62 887-4330-83227</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/62811725545" target="_blank"
+                >+62 811-725-545</a
+              >
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:pt.gabejaipro@gmail.com"
+                >pt.gabejaipro@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col footer-middle">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about/About.html">About Us</a></li>
+            <li><a href="services/services.html">Our Services</a></li>
+            <li><a href="properties/properties.html">Properties</a></li>
+            <li><a href="blog/blog.html">Latest Blog</a></li>
+            <li><a href="contact/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-right">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/pt.gabejaipro"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/pt.gabejaipro?igsh=MWNtanM2NXlhZjJ1dg=="
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+
+          <div class="legal-links">
+            <h3>Legal</h3>
+            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="#">Terms & Conditions</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 <strong>PT GABE JAI PRO</strong>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="blog.js"></script>
+
+    <script>
+      // Hamburger menu toggle
+      document
+        .querySelector(".nav-toggle")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-menu").classList.toggle("open");
+          this.classList.toggle("active");
+        });
+      // Close menu when a link is clicked
+      document.querySelectorAll(".nav-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.querySelector(".nav-menu").classList.remove("open");
+          document.querySelector(".nav-toggle").classList.remove("active");
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
