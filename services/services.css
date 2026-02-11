@@ -257,14 +257,13 @@ nav .nav-menu li a:hover::after {
   height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center; /* Vertikal Center */
-  justify-content: center; /* Horizontal Center */
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   text-align: center;
   color: #fff;
 }
 
-/* Gambar Background */
 .hero-bg {
   position: absolute;
   top: 0;
@@ -276,7 +275,6 @@ nav .nav-menu li a:hover::after {
   z-index: 1;
 }
 
-/* Overlay Gelap */
 .services-hero::after {
   content: "";
   position: absolute;
@@ -285,12 +283,10 @@ nav .nav-menu li a:hover::after {
   z-index: 2;
 }
 
-/* KONTEN JUDUL HERO (Class Baru) */
 .hero-header-text {
   position: relative;
   z-index: 3;
   padding: 0 20px;
-  /* Pastikan tidak ada margin yang mengganggu posisi tengah */
   margin: 0;
   animation: fadeInUp 1s ease;
 }
@@ -330,8 +326,6 @@ nav .nav-menu li a:hover::after {
 
 /* ================== RESPONSIVE MOBILE ================== */
 @media (max-width: 768px) {
-  /* Jika ingin di HP tidak terlalu tinggi, bisa ubah ini jadi 60vh */
-  /* Tapi kalau mau tetap full screen, biarkan 100vh */
   .services-hero {
     height: 100vh;
   }
@@ -403,31 +397,31 @@ nav .nav-menu li a:hover::after {
 /* ================== RESPONSIVE ================== */
 @media (max-width: 768px) {
   .hero-content {
-    flex-direction: column; /* form turun ke bawah */
+    flex-direction: column;
   }
   .services {
-    grid-template-columns: 1fr; /* services jadi 1 kolom */
+    grid-template-columns: 1fr;
   }
 }
 
 /* ================== LAYOUT CONTAINER ================== */
 .services-container {
-  width: 100%; /* Lebar penuh ke samping */
-  background-color: #0b1f33; /* Warna background utama (Biru Gelap) */
-  padding: 60px 0; /* Padding hanya atas & bawah */
-  overflow: hidden; /* Mencegah scrollbar horizontal jika ada elemen meluber */
+  width: 100%;
+  background-color: #0b1f33;
+  padding: 60px 0;
+  overflow: hidden;
 }
 
 .services-container > .hero-content,
 .services-container > .process,
 .services-container > .testimonials,
 .services-container > .cta-box {
-  max-width: 1200px; /* Batas lebar konten agar enak dibaca */
-  margin-left: auto; /* Otomatis tengah */
-  margin-right: auto; /* Otomatis tengah */
-  padding-left: 20px; /* Jarak aman kiri di HP */
-  padding-right: 20px; /* Jarak aman kanan di HP */
-  width: 100%; /* Pastikan mengambil ruang yang tersedia */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
 }
 
 /* ================== HERO CONTENT (Split Layout) ================== */
