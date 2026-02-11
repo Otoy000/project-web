@@ -1,16 +1,18 @@
+<!-- File: index-kavling.html -->
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Properties</title>
-    <link rel="stylesheet" href="PropertiesPage.css" />
+    <title>Listing Tanah Kavling Eksklusif</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="./css/listing-tanah-kavling.css" />
   </head>
   <body>
+    <!-- Navbar -->
     <nav>
       <div class="brand">
         <img
@@ -33,100 +35,143 @@
       </ul>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="properties-hero">
+    <!-- Hero Section -->
+    <section class="kavling-hero">
       <img
-        src="../images/properties.PNG"
-        alt="Properties Hero"
+        src="../images/hero-land.PNG"
+        alt="Hero Tanah Kavling"
         class="hero-bg"
       />
-
       <div class="hero-header-text">
-        <h1>Properties</h1>
-        <p class="breadcrumb">Home &gt; Properties</p>
+        <h1>Tanah Kavling Strategis</h1>
+        <p class="hero-subtitle">
+          Investasi masa depan yang aman dengan lokasi premium dan legalitas
+          terjamin.
+        </p>
+        <p class="breadcrumb">Home &gt; Properties &gt; Tanah Kavling</p>
+        <a href="#kavling-listing" class="btn-hero">Lihat Lokasi</a>
       </div>
     </section>
 
-    <section class="properties-section">
-      <div class="properties-wrapper">
+    <header>
+      <h1>Tanah Kavling Eksklusif</h1>
+      <p>Pilihan kavling ideal untuk rumah impian atau investasi properti</p>
+    </header>
+
+    <section class="features-section">
+      <div class="features-container">
         <div class="section-header">
-          <h2 class="section-title">Pilihan Properti</h2>
-          <p class="section-subtitle">
-            Temukan properti impian sesuai kebutuhan Anda
-          </p>
+          <span class="subheading">Kenapa Berinvestasi Disini?</span>
+          <h2 class="section-title">Keunggulan Kavling Kami</h2>
         </div>
 
-        <div class="properties-grid">
-          <div class="property-card">
-            <div class="icon-box">
-              <i class="fas fa-home"></i>
-            </div>
-            <div class="card-content">
-              <h3>Rumah Subsidi</h3>
-              <p>
-                Hunian terjangkau dengan fasilitas standar, cocok untuk keluarga
-                muda.
-              </p>
-              <a
-                class="btn-card"
-                href="../listing-rumah/listing-rumah-subsidi.html"
-                >Lihat Detail</a
-              >
-            </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon-wrapper"><i class="fas fa-file-contract"></i></div>
+            <h3>Legalitas Aman</h3>
+            <p>
+              Status tanah jelas (SHM/AJB) dan bebas sengketa untuk keamanan
+              aset Anda.
+            </p>
           </div>
 
-          <div class="property-card">
-            <div class="icon-box">
-              <i class="fas fa-building"></i>
-            </div>
-            <div class="card-content">
-              <h3>Rumah Komersil</h3>
-              <p>
-                Desain modern dan lokasi strategis untuk kenyamanan maksimal.
-              </p>
-              <a
-                class="btn-card"
-                href="../listing-rumah/listing-rumah-komersil.html"
-                >Lihat Detail</a
-              >
-            </div>
+          <div class="feature-card">
+            <div class="icon-wrapper"><i class="fas fa-road"></i></div>
+            <h3>Akses Jalan Lebar</h3>
+            <p>
+              Jalan utama dan jalan lingkungan lebar, mudah dilalui mobil dan
+              kendaraan berat.
+            </p>
           </div>
 
-          <div class="property-card">
-            <div class="icon-box">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div class="card-content">
-              <h3>Tanah Kavling</h3>
-              <p>
-                Lahan strategis siap bangun untuk investasi masa depan Anda.
-              </p>
-              <a
-                class="btn-card"
-                href="../listing-rumah/listing-tanah-kavling.html"
-                >Lihat Detail</a
-              >
-            </div>
+          <div class="feature-card">
+            <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+            <h3>Nilai Investasi Tinggi</h3>
+            <p>
+              Lokasi berkembang pesat menjanjikan kenaikan harga tanah yang
+              signifikan.
+            </p>
           </div>
-        </div>
 
-        <div class="video-section">
-          <h2 class="section-title small">Penjelasan Properti</h2>
-          <div class="video-container">
-            <video
-              class="video-frame"
-              controls
-              poster="../images/poster-video.jpg"
-            >
-              <source src="../video/present.mp4" type="video/mp4" />
-              Browser Anda tidak mendukung pemutaran video.
-            </video>
+          <div class="feature-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-drafting-compass"></i>
+            </div>
+            <h3>Siap Bangun</h3>
+            <p>
+              Kondisi tanah datar, padat, dan tersedia jaringan listrik serta
+              air.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <section id="kavling-listing" class="listing-section">
+      <div class="listing-container">
+        <div class="section-header">
+          <span class="subheading">Lokasi Pilihan</span>
+          <h2 class="section-title">Daftar Kavling Tersedia</h2>
+        </div>
+
+        <div class="listing-grid">
+          <div class="card kavling">
+            <div class="card-img-box">
+              <span class="badge">Hot Deal</span>
+              <img src="../images/Kavling 1.PNG" alt="Kavling Gedung Agung" />
+              <div class="price-tag">Rp 47.000.000</div>
+            </div>
+            <div class="card-content">
+              <h3>Kavling Gedung Agung</h3>
+              <div class="specs-grid">
+                <div class="spec-item">📐 113 m²</div>
+                <div class="spec-item">📍 Lampung Selatan</div>
+                <div class="spec-item">🏞️ Lingkungan Asri</div>
+                <div class="spec-item">🚗 Akses Mudah</div>
+              </div>
+              <a href="#" class="btn">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="card kavling">
+            <div class="card-img-box">
+              <span class="badge">Siap Bangun</span>
+              <img src="../images/Kavling 2.PNG" alt="Kavling Jati Agung" />
+              <div class="price-tag">Rp 55.000.000</div>
+            </div>
+            <div class="card-content">
+              <h3>Kavling Jati Agung</h3>
+              <div class="specs-grid">
+                <div class="spec-item">📐 120 m²</div>
+                <div class="spec-item">📍 Lampung Selatan</div>
+                <div class="spec-item">🏞️ Kawasan Berkembang</div>
+                <div class="spec-item">🚗 Dekat Tol</div>
+              </div>
+              <a href="#" class="btn">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="card kavling">
+            <div class="card-img-box">
+              <span class="badge">SHM</span>
+              <img src="../images/Kavling 3.PNG" alt="Kavling Kota Baru" />
+              <div class="price-tag">Rp 85.000.000</div>
+            </div>
+            <div class="card-content">
+              <h3>Kavling Kota Baru</h3>
+              <div class="specs-grid">
+                <div class="spec-item">📐 150 m²</div>
+                <div class="spec-item">📍 Lampung Selatan</div>
+                <div class="spec-item">🏞️ Udara Sejuk</div>
+                <div class="spec-item">🚗 Jalan Lebar</div>
+              </div>
+              <a href="#" class="btn">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
@@ -209,7 +254,6 @@
         </p>
       </div>
     </footer>
-
     <script>
       // Hamburger menu toggle
       document
