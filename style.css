@@ -726,64 +726,79 @@ nav .nav-menu li a:hover::after {
 
 /* === WHO WE ARE SECTION === */
 #who-we-are {
-  padding: 80px 8%;
+  padding: 100px 8%;
   background: linear-gradient(135deg, #0a2540, #102c54);
-  display: flex;
-  justify-content: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.who-container {
+.about-wrapper {
   display: flex;
-  gap: 40px;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* === LEFT CONTENT === */
 .who-left {
   flex: 1;
+  max-width: 600px;
 }
 
 .who-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   color: #f9d423;
-  font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
 .who-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.3;
+  color: #fff;
 }
 
 .who-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+  text-align: justify;
 }
 
-/* === WHO STATS === */
+/* === RIGHT STATS === */
 .who-stats {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  flex: 1;
+  gap: 25px;
   justify-items: center;
 }
 
 .stat-box {
-  width: 170px;
-  height: 170px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(12px);
-  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   position: relative;
-  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .stat-box::before {
@@ -791,35 +806,88 @@ nav .nav-menu li a:hover::after {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, #f9d423, #ff4e50, #1e90ff);
+  padding: 2px;
+  background: linear-gradient(135deg, #f9d423, #fb8500);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  z-index: 1;
+  opacity: 0.7;
 }
 
 .stat-box:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .stat-box h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
   margin: 0;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
 
-.stat-box span {
-  font-size: 1rem;
-  margin-top: 6px;
+.stat-box h3 span:last-child {
+  font-size: 0.85rem;
   color: #f9d423;
+  margin-top: 5px;
+  text-transform: uppercase;
   font-weight: 600;
-  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.stat-box p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 968px) {
+  #who-we-are {
+    padding: 70px 20px;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .who-left {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .who-desc {
+    text-align: center;
+  }
+
+  .who-stats {
+    width: 100%;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .who-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .stat-box {
+    width: 135px;
+    height: 135px;
+  }
+
+  .stat-box h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* === ABOUT SECTION === */
