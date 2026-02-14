@@ -1,72 +1,159 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ===== Floating Button =====
-  const btn = document.createElement("div");
-  btn.className = "kpr-btn";
-  btn.innerHTML = "💰 KPR";
-  document.body.appendChild(btn);
+  // ===========================
+  // 1️⃣ Buat Tombol Floating KPR
+  // ===========================
+  const kprBtn = document.createElement("button");
+  kprBtn.id = "kpr-floating-btn";
+  kprBtn.innerHTML = `<i class="fas fa-calculator"></i>`;
+  // Tambahkan tooltip
+  const tooltip = document.createElement("span");
+  tooltip.className = "kpr-tooltip";
+  tooltip.innerText = "Hitung KPR";
+  kprBtn.appendChild(tooltip);
 
-  // ===== Modal =====
-  const modal = document.createElement("div");
-  modal.className = "kpr-modal";
-  modal.innerHTML = `
-    <div class="kpr-content">
-      <span class="kpr-close">&times;</span>
-      <h2>Kalkulator KPR</h2>
+  document.body.appendChild(kprBtn);
 
-      <label>Harga Properti</label>
-      <input type="number" id="harga" placeholder="500000000" />
+  // ===========================
+  // 2️⃣ Buat Modal Kalkulator
+  // ===========================
+  const kprModal = document.createElement("div");
+  kprModal.id = "kpr-modal";
+  kprModal.innerHTML = `
+    <div class="kpr-box">
+      <div class="kpr-header">
+        <h3><i class="fas fa-calculator"></i> Hitung KPR</h3>
+        <span class="close-kpr">&times;</span>
+      </div>
+      <div class="kpr-body">
+        <div class="input-group">
+          <label>Harga Properti (Rp)</label>
+          <input type="text" id="kpr-harga" placeholder="Contoh: 500.000.000" onkeyup="formatRupiah(this)">
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label>DP (%)</label>
+            <input type="number" id="kpr-dp-persen" placeholder="20">
+          </div>
+          <div class="input-group">
+            <label>Bunga (%/thn)</label>
+            <input type="number" id="kpr-bunga" placeholder="8.5">
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Jangka Waktu (Tahun)</label>
+          <input type="range" id="kpr-tenor" min="5" max="30" value="15" oninput="updateTenorVal(this.value)">
+          <span id="tenor-val">15 Tahun</span>
+        </div>
+        
+        <div class="kpr-result" id="kpr-result">
+          <p class="label">Estimasi Cicilan:</p>
+          <h4 id="cicilan-bulanan">Rp 0</h4>
+          <p class="detail">Pinjaman: <span id="total-pinjaman">Rp 0</span></p>
+        </div>
 
-      <label>DP (%)</label>
-      <input type="number" id="dp" placeholder="20" />
-
-      <label>Bunga (% per tahun)</label>
-      <input type="number" id="bunga" placeholder="10" />
-
-      <label>Tenor (tahun)</label>
-      <input type="number" id="tenor" placeholder="15" />
-
-      <button id="hitung">Hitung Cicilan</button>
-      <p id="hasil"></p>
+        <button id="hitung-kpr-btn">Hitung Sekarang</button>
+      </div>
     </div>
   `;
-  document.body.appendChild(modal);
+  document.body.appendChild(kprModal);
 
-  // ===== Show Modal dengan animasi =====
-  btn.onclick = () => {
-    modal.style.display = "flex";         // tampilkan modal
-    setTimeout(() => modal.classList.add("show"), 50); // animasi scale
-  };
+  // ===========================
+  // 3️⃣ Logic & Event Listeners
+  // ===========================
 
-  // ===== Close Modal =====
-  const closeBtn = modal.querySelector(".kpr-close");
-  closeBtn.onclick = () => {
-    modal.classList.remove("show");       // animasi keluar
-    setTimeout(() => modal.style.display = "none", 300); // sembunyikan
-  };
-
-  // Tutup modal jika klik di luar konten
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-      setTimeout(() => modal.style.display = "none", 300);
-    }
+  // Buka Modal
+  kprBtn.addEventListener("click", () => {
+    kprModal.style.display = "flex";
+    setTimeout(() => kprModal.classList.add("active"), 10);
   });
 
-  // ===== Hitung Cicilan =====
-  document.getElementById("hitung").onclick = () => {
-    const harga = parseFloat(document.getElementById("harga").value) || 0;
-    const dp = parseFloat(document.getElementById("dp").value) / 100 * harga || 0;
-    const bunga = parseFloat(document.getElementById("bunga").value) / 100 / 12 || 0;
-    const tenor = parseInt(document.getElementById("tenor").value) * 12 || 0;
-    const pinjaman = harga - dp;
+  // Tutup Modal
+  const closeBtn = kprModal.querySelector(".close-kpr");
+  closeBtn.addEventListener("click", closeModal);
+  kprModal.addEventListener("click", (e) => {
+    if (e.target === kprModal) closeModal();
+  });
 
-    if (pinjaman <= 0 || bunga <= 0 || tenor <= 0) {
-      document.getElementById("hasil").innerText = "Mohon isi semua data dengan benar!";
+  function closeModal() {
+    kprModal.classList.remove("active");
+    setTimeout(() => (kprModal.style.display = "none"), 300);
+  }
+
+  // Update Slider Tenor
+  window.updateTenorVal = (val) => {
+    document.getElementById("tenor-val").innerText = val + " Tahun";
+  };
+
+  // Format Rupiah Input
+  window.formatRupiah = (input) => {
+    let value = input.value.replace(/[^,\d]/g, "").toString();
+    let split = value.split(",");
+    let sisa = split[0].length % 3;
+    let rupiah = split[0].substr(0, sisa);
+    let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    if (ribuan) {
+      let separator = sisa ? "." : "";
+      rupiah += separator + ribuan.join(".");
+    }
+    input.value = split[1] !== undefined ? rupiah + "," + split[1] : rupiah;
+  };
+
+  // Hitung KPR (Rumus Anuitas)
+  document.getElementById("hitung-kpr-btn").addEventListener("click", () => {
+    // Ambil nilai dan bersihkan format titik
+    let hargaStr = document
+      .getElementById("kpr-harga")
+      .value.replace(/\./g, "");
+    let harga = parseFloat(hargaStr) || 0;
+
+    let dpPersen =
+      parseFloat(document.getElementById("kpr-dp-persen").value) || 0;
+    let bungaTahun =
+      parseFloat(document.getElementById("kpr-bunga").value) || 0;
+    let tenorTahun = parseInt(document.getElementById("kpr-tenor").value) || 0;
+
+    if (harga <= 0) {
+      alert("Masukkan harga properti yang valid!");
       return;
     }
 
-    const cicilan = (pinjaman * bunga) / (1 - Math.pow(1 + bunga, -tenor));
-    document.getElementById("hasil").innerText =
-      "Cicilan per bulan: Rp " + cicilan.toLocaleString("id-ID");
-  };
+    // Perhitungan
+    let dpNominal = (harga * dpPersen) / 100;
+    let pokokPinjaman = harga - dpNominal;
+
+    let bungaBulan = bungaTahun / 100 / 12;
+    let tenorBulan = tenorTahun * 12;
+
+    // Rumus Cicilan Anuitas: P * (i / (1 - (1+i)^-n))
+    let cicilan = 0;
+    if (bungaBulan > 0) {
+      cicilan =
+        pokokPinjaman *
+        (bungaBulan / (1 - Math.pow(1 + bungaBulan, -tenorBulan)));
+    } else {
+      cicilan = pokokPinjaman / tenorBulan;
+    }
+
+    // Tampilkan Hasil
+    document.getElementById("cicilan-bulanan").innerText =
+      formatCurrency(cicilan) + " / bln";
+    document.getElementById("total-pinjaman").innerText =
+      formatCurrency(pokokPinjaman);
+
+    // Efek highlight hasil
+    const resBox = document.getElementById("kpr-result");
+    resBox.style.animation = "none";
+    resBox.offsetHeight; /* trigger reflow */
+    resBox.style.animation = "pulse 0.5s";
+  });
+
+  function formatCurrency(num) {
+    return (
+      "Rp " +
+      Math.ceil(num)
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    );
+  }
 });
