@@ -1,90 +1,72 @@
-const images = [
-  "url('images/BG1.PNG')",
-  "url('images/BG2.PNG')",
-  "url('images/BG3.PNG')",
-  "url('images/BG4.PNG')"
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = [
+    {
+      image: "images/bg1.png",
+      title: "Cara Termudah <br>Mencari Properti",
+      subtitle:
+        "Temukan rumah impian Anda bersama PT GABE JAI PRO. Dipercaya oleh ribuan orang, memberikan penawaran properti terbaik untuk Anda.",
+    },
+    {
+      image: "images/bg2.png",
+      title: "Hidup Indah <br>Bersama Keluarga",
+      subtitle:
+        "Nikmati setiap momen berharga bersama orang tercinta di rumah yang nyaman dan penuh kehangatan.",
+    },
+    {
+      image: "images/bg3.png",
+      title: "Nyaman Hari Ini, <br>Investasi Esok",
+      subtitle:
+        "Hunian di lingkungan asri yang tidak hanya nyaman ditinggali, tapi juga bernilai tinggi untuk masa depan.",
+    },
+    {
+      image: "images/bg4.png",
+      title: "Ruang Nyaman, <br>Hidup Lebih Tenang",
+      subtitle:
+        "Desain modern minimalis untuk kenyamanan Anda, menciptakan suasana rumah yang damai setiap hari.",
+    },
+  ];
 
-const titles = [
-  "Buka Pintu Hunian Idaman",
-  "Hidup Indah Bersama Keluarga",
-  "Nyaman Hari Ini, Investasi Esok",
-  "Ruang Nyaman, Hidup Lebih Tenang"
-];
-
-const subtitles = [
-  "Kami hadir untuk membantu Anda menemukan rumah yang sesuai dengan gaya hidup dan impian.",
-  "Nikmati setiap momen berharga bersama orang tercinta di rumah yang nyaman dan penuh kehangatan.",
-  "Hunian di lingkungan asri yang tidak hanya nyaman ditinggali, tapi juga bernilai untuk masa depan.",
-  "Desain modern minimalis untuk kenyamanan Anda, menciptakan suasana rumah yang damai setiap hari.",
-];
-
-let current = 0;
-
-window.addEventListener("load", () => {
-  const hero = document.querySelector(".hero-wrap");
-  const heroTitle = document.getElementById("hero-title");
-  const heroSubtitle = document.getElementById("hero-subtitle");
-
-  // layer gambar
-  const slideCurrent = document.createElement("div");
-  const slideNext = document.createElement("div");
-
-  [slideCurrent, slideNext].forEach(slide => {
-    slide.style.position = "absolute";
-    slide.style.top = 0;
-    slide.style.left = 0;
-    slide.style.width = "100%";
-    slide.style.height = "100%";
-    slide.style.backgroundSize = "cover";
-    slide.style.backgroundPosition = "center";
-    slide.style.transition = "transform 1s ease, scale 1s ease";
-    slide.style.transform = "scale(1.05)";
-    slide.style.willChange = "transform"; // optimasi performa
-    hero.appendChild(slide);
+  // Preload gambar
+  slides.forEach((slide) => {
+    const img = new Image();
+    img.src = slide.image;
   });
 
-  slideCurrent.style.backgroundImage = images[current];
-  heroTitle.textContent = titles[current];
-  heroSubtitle.textContent = subtitles[current];
+  let currentIndex = 0;
+  const heroSection = document.querySelector(".hero-wrap");
 
-  // shadow teks untuk kesan premium
-  heroTitle.style.textShadow = "0 4px 25px rgba(0,0,0,0.6)";
-  heroSubtitle.style.textShadow = "0 2px 20px rgba(0,0,0,0.5)";
-
-  // efek parallax ringan saat mouse move
-  hero.addEventListener("mousemove", e => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20; // geser ±10px
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    slideCurrent.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-    slideNext.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-  });
+  // 👉 Script mencari elemen ini. Kalau HTML Langkah 1 tidak diupdate, ini akan Error/Null
+  const textContent = document.getElementById("text-content");
+  const titleEl = document.getElementById("hero-title");
+  const subtitleEl = document.getElementById("hero-subtitle");
 
   function changeSlide() {
-    const nextIndex = (current + 1) % images.length;
+    currentIndex = (currentIndex + 1) % slides.length;
+    const nextSlide = slides[currentIndex];
 
-    slideNext.style.backgroundImage = images[nextIndex];
-    slideNext.style.transform = "translateX(100%) scale(1.05)";
+    // 1. Ganti Gambar
+    if (heroSection) {
+      heroSection.style.backgroundImage = `url('${nextSlide.image}')`;
+    }
 
-    requestAnimationFrame(() => {
-      slideCurrent.style.transform = "translateX(-100%) scale(1)";
-      slideNext.style.transform = "translateX(0) scale(1)";
-    });
+    // 2. Ganti Teks (Cek apakah textContent ditemukan?)
+    if (textContent) {
+      // Fade Out (Hilang)
+      textContent.classList.add("hidden");
 
-    slideNext.addEventListener("transitionend", function handler() {
-      heroTitle.textContent = titles[nextIndex];
-      heroSubtitle.textContent = subtitles[nextIndex];
+      // Tunggu 0.5 detik (sesuai CSS transition), baru ganti teks
+      setTimeout(() => {
+        if (titleEl) titleEl.innerHTML = nextSlide.title;
+        if (subtitleEl) subtitleEl.textContent = nextSlide.subtitle;
 
-      // reset slideCurrent untuk loop berikutnya
-      slideCurrent.style.transform = "translateX(0) scale(1.05)";
-      slideCurrent.style.backgroundImage = images[nextIndex];
-
-      slideNext.style.transform = "translateX(100%) scale(1.05)";
-
-      current = nextIndex;
-
-      slideNext.removeEventListener("transitionend", handler);
-    });
+        // Fade In (Muncul)
+        textContent.classList.remove("hidden");
+      }, 500);
+    } else {
+      console.error(
+        "Elemen id='text-content' tidak ditemukan! Cek file HTML Anda.",
+      );
+    }
   }
 
   setInterval(changeSlide, 5000);

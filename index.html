@@ -64,33 +64,14 @@
     <div class="row no-gutters slider-text justify-content-center align-items-center">
       <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
         <div class="text text-center">
-          
-          <h1 id="hero-title" class="mb-4">The Simplest <br>Way to Find Property</h1>
-          <p id="hero-subtitle">
-            Discover your dream home with OurCompany. Trusted by thousands, delivering the best real estate deals for you.
-          </p>
-          
+          <div id="text-content">
+            <h1 id="hero-title" class="mb-4">Cara Termudah <br>Mencari Properti</h1>
+            <p id="hero-subtitle">
+              Temukan rumah impian Anda bersama PT GABE JAI PRO. Dipercaya oleh ribuan orang, memberikan penawaran properti terbaik untuk Anda.
+            </p>
+          </div>
           <form action="#" class="search-location mt-md-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-10 align-items-end">
-                <div class="form-group">
-                  <div class="form-field d-flex">
-                    <input type="text" class="form-control" placeholder="Search location">
-                    <select id="propertyType" class="form-control">
-                       <option value="">Property Type</option>
-                       <option value="Rumah Subsidi">Rumah Subsidi</option>
-                       <option value="Rumah Komersil">Rumah Komersil</option>
-                       <option value="Kavling">Kavling</option>
-                    </select>
-                    <button type="button" id="searchBtn" class="btn btn-primary">
-                      <span class="ion-ios-search"></span> Search
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </form>
-
         </div>
       </div>
     </div>
@@ -599,23 +580,6 @@
   <script>
 
    document.addEventListener('DOMContentLoaded', function() {
-
-  // ===== Hero background =====
-  const hero = document.getElementById('alider');
-  if (hero) {
-    const bgImage = hero.getAttribute('data-bg');
-    hero.style.backgroundImage = `url('${bgImage}')`;
-  }
-
-  // ===== Slider navigation =====
-  const slider = document.querySelector('.slider-container');
-  window.slideLeft = function() { 
-    if (slider) slider.scrollBy({ left: -320, behavior: 'smooth' }); 
-  };
-  window.slideRight = function() { 
-    if (slider) slider.scrollBy({ left: 320, behavior: 'smooth' }); 
-  };
-
   // ===== FAQ Accordion =====
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach(item => {
@@ -642,13 +606,13 @@
 
       switch(selectedText) {
         case "Rumah Subsidi":
-          window.location.href = "listing-rumah-subsidi.html";
+          window.location.href = "listing-rumah/listing-rumah-subsidi.html";
           break;
         case "Rumah Komersil":
-          window.location.href = "listing-rumah-komersil.html";
+          window.location.href = "listing-rumah/listing-rumah-komersil.html";
           break;
         case "Kavling":
-          window.location.href = "listing-tanah-kavling.html";
+          window.location.href = "listing-rumah/listing-tanah-kavling.html";
           break;
         default:
           alert("Silakan pilih tipe properti terlebih dahulu!");
