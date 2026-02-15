@@ -3,15 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hubungi Kami - Real Estate</title>
+    <title>Hubungi Kami - PT GABE JAI PRO</title>
+
     <link rel="stylesheet" href="contact.css" />
+
+    <link rel="stylesheet" href="../chat-wa.css" />
+    <link rel="stylesheet" href="../kpr-calculator.css" />
+    <link rel="stylesheet" href="../loader.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    />
   </head>
   <body>
-    <!-- Navbar -->
     <nav>
       <div class="brand">
         <img
@@ -30,147 +39,156 @@
         <li><a href="../services/services.html">Services</a></li>
         <li><a href="../properties/properties.html">Properties</a></li>
         <li><a href="../blog/blog.html">Blog</a></li>
-        <li><a href="../contact/contact.html">Contact</a></li>
+        <li>
+          <a
+            href="../contact/contact.html"
+            class="active"
+            style="color: #ffb703"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
 
-    <section class="contact-hero">
-      <img src="../images/contact.png" alt="Contact Hero" class="hero-bg" />
+    <main>
+      <section class="contact-hero">
+        <img src="../images/contact.png" alt="Contact Hero" class="hero-bg" />
 
-      <div class="hero-header-text">
-        <h1>Contact Us</h1>
-        <p class="breadcrumb">Home &gt; Contact</p>
-      </div>
-    </section>
+        <div class="hero-header-text">
+          <h1>Contact Us</h1>
+          <p class="breadcrumb">Home &gt; Contact</p>
+        </div>
+      </section>
 
-    <section class="contact-section">
-      <div class="contact-container">
-        <header class="contact-header">
-          <h2 class="section-title">Hubungi Kami</h2>
-          <p>
-            Kami siap membantu Anda menemukan properti impian. Silakan kirim
-            pesan atau kunjungi kantor kami.
-          </p>
-        </header>
+      <section class="contact-section">
+        <div class="contact-container">
+          <header class="contact-header">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p>
+              Kami siap membantu Anda menemukan properti impian. Silakan kirim
+              pesan atau kunjungi kantor kami.
+            </p>
+          </header>
 
-        <div class="contact-wrapper">
-          <div class="contact-form-box">
-            <h3>Kirim Pesan</h3>
-            <form class="contact-form" action="#">
-              <div class="form-group">
-                <label for="name">Nama Lengkap</label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Contoh: Budi Santoso"
-                  required
-                />
+          <div class="contact-wrapper">
+            <div class="contact-form-box">
+              <h3>Kirim Pesan</h3>
+              <form class="contact-form" action="#">
+                <div class="form-group">
+                  <label for="name">Nama Lengkap</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Contoh: Budi Santoso"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Alamat Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="contoh@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Nomor Telepon/WA</label>
+                  <input type="tel" id="phone" placeholder="0812-xxxx-xxxx" />
+                </div>
+                <div class="form-group">
+                  <label for="message">Pesan Anda</label>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Tulis pesan atau pertanyaan Anda di sini..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+              </form>
+            </div>
+
+            <div class="contact-info-box">
+              <h3>Informasi Kantor</h3>
+
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Alamat:</strong>
+                  <p>Jl. Aster 1, Sukarame, Bandar Lampung, Indonesia</p>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">Alamat Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="contoh@email.com"
-                  required
-                />
+
+              <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <strong>Telepon:</strong>
+                  <p>+62 887-4330-83227</p>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="phone">Nomor Telepon/WA</label>
-                <input type="tel" id="phone" placeholder="0812-xxxx-xxxx" />
+
+              <div class="info-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <strong>WhatsApp:</strong>
+                  <p>
+                    <a href="https://wa.me/62811725545" target="_blank"
+                      >+62 811-725-545</a
+                    >
+                  </p>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="message">Pesan Anda</label>
-                <textarea
-                  id="message"
-                  rows="5"
-                  placeholder="Tulis pesan atau pertanyaan Anda di sini..."
-                  required
-                ></textarea>
+
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>Email:</strong>
+                  <p>pt.gabejaipro@gmail.com</p>
+                </div>
               </div>
-              <button type="submit" class="btn-submit">Kirim Pesan</button>
-            </form>
+
+              <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong>Jam Operasional:</strong>
+                  <p>
+                    Senin - Jumat: 09.00 - 17.00 WIB<br />Sabtu: 09.00 - 14.00
+                    WIB
+                  </p>
+                </div>
+              </div>
+
+              <div class="social-connect">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="contact-info-box">
-            <h3>Informasi Kantor</h3>
-
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Alamat:</strong>
-                <p>Jl. Aster 1, Sukarame, Bandar Lampung, Indonesia</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <i class="fas fa-phone-alt"></i>
-              <div>
-                <strong>Telepon:</strong>
-                <p>+62 887-4330-83227</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <i class="fab fa-whatsapp"></i>
-              <div>
-                <strong>WhatsApp:</strong>
-                <p>
-                  <a href="https://wa.me/62811725545" target="_blank"
-                    >+62 811-725-545</a
-                  >
-                </p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email:</strong>
-                <p>pt.gabejaipro@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <strong>Jam Operasional:</strong>
-                <p>
-                  Senin - Jumat: 09.00 - 17.00 WIB<br />Sabtu: 09.00 - 14.00 WIB
-                </p>
-              </div>
-            </div>
-
-            <div class="social-connect">
-              <h4>Ikuti Kami</h4>
-              <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
+          <div class="map-section">
+            <h3>Lokasi Kami</h3>
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1845737309773!2d105.3132894!3d-5.3888172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaf9aa533bcd9d26b%3A0x85ccaa8c3587747f!2sPT%20GABE%20JAI%20PRO!5e0!3m2!1sid!2sid!4v1770819191626!5m2!1sid!2sid"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
             </div>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="map-section">
-          <h3>Lokasi Kami</h3>
-          <div class="map-frame">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1845737309773!2d105.3132894!3d-5.3888172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaf9aa533bcd9d26b%3A0x85ccaa8c3587747f!2sPT%20GABE%20JAI%20PRO!5e0!3m2!1sid!2sid!4v1770819191626!5m2!1sid!2sid"
-              width="100%"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            >
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-col footer-left">
@@ -207,12 +225,12 @@
         <div class="footer-col footer-middle">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about/About.html">About Us</a></li>
-            <li><a href="services/services.html">Our Services</a></li>
-            <li><a href="properties/properties.html">Properties</a></li>
-            <li><a href="blog/blog.html">Latest Blog</a></li>
-            <li><a href="contact/contact.html">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/About.html">About Us</a></li>
+            <li><a href="../services/services.html">Our Services</a></li>
+            <li><a href="../properties/properties.html">Properties</a></li>
+            <li><a href="../blog/blog.html">Latest Blog</a></li>
+            <li><a href="../contact/contact.html">Contact Us</a></li>
           </ul>
         </div>
 
@@ -254,18 +272,23 @@
     </footer>
 
     <script>
-      document
-        .querySelector(".nav-toggle")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.toggle("open");
-          this.classList.toggle("active");
-        });
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+        this.classList.toggle("active");
+      });
+
       document.querySelectorAll(".nav-menu a").forEach(function (link) {
         link.addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.remove("open");
-          document.querySelector(".nav-toggle").classList.remove("active");
+          navMenu.classList.remove("open");
+          navToggle.classList.remove("active");
         });
       });
     </script>
+
+    <script src="../chat-wa-loader.js"></script>
+    <script src="../kpr-calculator.js"></script>
   </body>
 </html>

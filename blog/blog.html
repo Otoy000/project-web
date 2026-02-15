@@ -3,17 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
-    <!-- Link CSS -->
+    <title>Blog - PT GABE JAI PRO</title>
+
     <link rel="stylesheet" href="blog.css" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <link rel="stylesheet" href="../chat-wa.css" />
+    <link rel="stylesheet" href="../kpr-calculator.css" />
+    <link rel="stylesheet" href="../loader.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    />
   </head>
   <body>
-    <!-- Navbar -->
     <nav>
       <div class="brand">
         <img
@@ -31,47 +38,53 @@
         <li><a href="../about/About.html">About</a></li>
         <li><a href="../services/services.html">Services</a></li>
         <li><a href="../properties/properties.html">Properties</a></li>
-        <li><a href="../blog/blog.html">Blog</a></li>
+        <li>
+          <a href="../blog/blog.html" class="active" style="color: #ffb703"
+            >Blog</a
+          >
+        </li>
         <li><a href="../contact/contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="blog-hero">
-      <img src="../images/blog.PNG" alt="Blog Hero" class="hero-bg" />
+    <main>
+      <section class="blog-hero">
+        <img src="../images/blog.PNG" alt="Blog Hero" class="hero-bg" />
 
-      <div class="hero-header-text">
-        <h1>Our Blog</h1>
-        <p class="breadcrumb">Home &gt; Blog</p>
-      </div>
-    </section>
-
-    <section class="blog-section">
-      <div class="blog-container">
-        <div class="section-header">
-          <span class="subheading">Our Blog</span>
-          <h2 class="section-title">Recent Articles</h2>
+        <div class="hero-header-text">
+          <h1>Our Blog</h1>
+          <p class="breadcrumb">Home &gt; Blog</p>
         </div>
+      </section>
 
-        <div id="blog-content">
-          <p style="text-align: center">Memuat artikel...</p>
-        </div>
-
-        <div class="pagination" id="pagination">
-          <a href="#" class="prev" id="btn-prev">&laquo; Prev</a>
-
-          <div id="page-numbers" style="display: contents">
-            <a href="#" class="page active" data-page="1">1</a>
-            <a href="#" class="page" data-page="2">2</a>
-            <a href="#" class="page" data-page="3">3</a>
+      <section class="blog-section">
+        <div class="blog-container">
+          <div class="section-header">
+            <span class="subheading">Latest News</span>
+            <h2 class="section-title">Artikel Terbaru</h2>
           </div>
 
-          <a href="#" class="next" id="btn-next">Next &raquo;</a>
-        </div>
-      </div>
-    </section>
+          <div id="blog-content" class="blog-grid">
+            <p style="text-align: center; color: #fff; grid-column: 1/-1">
+              Memuat artikel...
+            </p>
+          </div>
 
-    <!-- Footer -->
+          <div class="pagination" id="pagination">
+            <a href="#" class="prev" id="btn-prev">&laquo; Prev</a>
+
+            <div id="page-numbers" style="display: contents">
+              <a href="#" class="page active" data-page="1">1</a>
+              <a href="#" class="page" data-page="2">2</a>
+              <a href="#" class="page" data-page="3">3</a>
+            </div>
+
+            <a href="#" class="next" id="btn-next">Next &raquo;</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-col footer-left">
@@ -108,12 +121,12 @@
         <div class="footer-col footer-middle">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about/About.html">About Us</a></li>
-            <li><a href="services/services.html">Our Services</a></li>
-            <li><a href="properties/properties.html">Properties</a></li>
-            <li><a href="blog/blog.html">Latest Blog</a></li>
-            <li><a href="contact/contact.html">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/About.html">About Us</a></li>
+            <li><a href="../services/services.html">Our Services</a></li>
+            <li><a href="../properties/properties.html">Properties</a></li>
+            <li><a href="../blog/blog.html">Latest Blog</a></li>
+            <li><a href="../contact/contact.html">Contact Us</a></li>
           </ul>
         </div>
 
@@ -154,23 +167,24 @@
       </div>
     </footer>
 
-    <script src="blog.js"></script>
-
     <script>
-      // Hamburger menu toggle
-      document
-        .querySelector(".nav-toggle")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.toggle("open");
-          this.classList.toggle("active");
-        });
-      // Close menu when a link is clicked
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+        this.classList.toggle("active");
+      });
+
       document.querySelectorAll(".nav-menu a").forEach(function (link) {
         link.addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.remove("open");
-          document.querySelector(".nav-toggle").classList.remove("active");
+          navMenu.classList.remove("open");
+          navToggle.classList.remove("active");
         });
       });
     </script>
+    <script src="blog.js"></script>
+    <script src="../chat-wa-loader.js"></script>
+    <script src="../kpr-calculator.js"></script>
   </body>
 </html>

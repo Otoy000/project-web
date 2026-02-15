@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Properties</title>
+    <title>Properties - PT GABE JAI PRO</title>
+
     <link rel="stylesheet" href="PropertiesPage.css" />
+    <link rel="stylesheet" href="../chat-wa.css" />
+    <link rel="stylesheet" href="../kpr-calculator.css" />
+    <link rel="stylesheet" href="../loader.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
     />
   </head>
   <body>
@@ -27,107 +36,113 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about/About.html">About</a></li>
         <li><a href="../services/services.html">Services</a></li>
-        <li><a href="../properties/properties.html">Properties</a></li>
+        <li>
+          <a
+            href="../properties/properties.html"
+            class="active"
+            style="color: #ffb703"
+            >Properties</a
+          >
+        </li>
         <li><a href="../blog/blog.html">Blog</a></li>
         <li><a href="../contact/contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="properties-hero">
-      <img
-        src="../images/properties.PNG"
-        alt="Properties Hero"
-        class="hero-bg"
-      />
-
-      <div class="hero-header-text">
-        <h1>Properties</h1>
-        <p class="breadcrumb">Home &gt; Properties</p>
-      </div>
-    </section>
-
-    <section class="properties-section">
-      <div class="properties-wrapper">
-        <div class="section-header">
-          <h2 class="section-title">Pilihan Properti</h2>
-          <p class="section-subtitle">
-            Temukan properti impian sesuai kebutuhan Anda
-          </p>
+    <main>
+      <section class="properties-hero">
+        <img
+          src="../images/properties.PNG"
+          alt="Properties Hero"
+          class="hero-bg"
+        />
+        <div class="hero-header-text">
+          <h1>Properties</h1>
+          <p class="breadcrumb">Home &gt; Properties</p>
         </div>
+      </section>
 
-        <div class="properties-grid">
-          <div class="property-card">
-            <div class="icon-box">
-              <i class="fas fa-home"></i>
+      <section class="properties-section">
+        <div class="properties-wrapper">
+          <div class="section-header">
+            <h2 class="section-title">Pilihan Properti</h2>
+            <p class="section-subtitle">
+              Temukan properti impian sesuai kebutuhan Anda
+            </p>
+          </div>
+
+          <div class="properties-grid">
+            <div class="property-card">
+              <div class="icon-box">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="card-content">
+                <h3>Rumah Subsidi</h3>
+                <p>
+                  Hunian terjangkau dengan fasilitas standar, cocok untuk
+                  keluarga muda.
+                </p>
+                <a
+                  class="btn-card"
+                  href="../listing-rumah/listing-rumah-subsidi.html"
+                  >Lihat Detail</a
+                >
+              </div>
             </div>
-            <div class="card-content">
-              <h3>Rumah Subsidi</h3>
-              <p>
-                Hunian terjangkau dengan fasilitas standar, cocok untuk keluarga
-                muda.
-              </p>
-              <a
-                class="btn-card"
-                href="../listing-rumah/listing-rumah-subsidi.html"
-                >Lihat Detail</a
-              >
+
+            <div class="property-card">
+              <div class="icon-box">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="card-content">
+                <h3>Rumah Komersil</h3>
+                <p>
+                  Desain modern dan lokasi strategis untuk kenyamanan maksimal.
+                </p>
+                <a
+                  class="btn-card"
+                  href="../listing-rumah/listing-rumah-komersil.html"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <div class="property-card">
+              <div class="icon-box">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div class="card-content">
+                <h3>Tanah Kavling</h3>
+                <p>
+                  Lahan strategis siap bangun untuk investasi masa depan Anda.
+                </p>
+                <a
+                  class="btn-card"
+                  href="../listing-rumah/listing-tanah-kavling.html"
+                  >Lihat Detail</a
+                >
+              </div>
             </div>
           </div>
 
-          <div class="property-card">
-            <div class="icon-box">
-              <i class="fas fa-building"></i>
-            </div>
-            <div class="card-content">
-              <h3>Rumah Komersil</h3>
-              <p>
-                Desain modern dan lokasi strategis untuk kenyamanan maksimal.
-              </p>
-              <a
-                class="btn-card"
-                href="../listing-rumah/listing-rumah-komersil.html"
-                >Lihat Detail</a
+          <div class="video-section">
+            <h2 class="section-title small">Penjelasan Properti</h2>
+            <div class="video-container">
+              <video
+                class="video-frame"
+                controls
+                poster="../images/poster-video.jpg"
+                playsinline
               >
-            </div>
-          </div>
-
-          <div class="property-card">
-            <div class="icon-box">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div class="card-content">
-              <h3>Tanah Kavling</h3>
-              <p>
-                Lahan strategis siap bangun untuk investasi masa depan Anda.
-              </p>
-              <a
-                class="btn-card"
-                href="../listing-rumah/listing-tanah-kavling.html"
-                >Lihat Detail</a
-              >
+                <source src="../video/present.mp4" type="video/mp4" />
+                Browser Anda tidak mendukung pemutaran video.
+              </video>
             </div>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="video-section">
-          <h2 class="section-title small">Penjelasan Properti</h2>
-          <div class="video-container">
-            <video
-              class="video-frame"
-              controls
-              poster="../images/poster-video.jpg"
-            >
-              <source src="../video/present.mp4" type="video/mp4" />
-              Browser Anda tidak mendukung pemutaran video.
-            </video>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-col footer-left">
@@ -164,12 +179,12 @@
         <div class="footer-col footer-middle">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about/About.html">About Us</a></li>
-            <li><a href="services/services.html">Our Services</a></li>
-            <li><a href="properties/properties.html">Properties</a></li>
-            <li><a href="blog/blog.html">Latest Blog</a></li>
-            <li><a href="contact/contact.html">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/About.html">About Us</a></li>
+            <li><a href="../services/services.html">Our Services</a></li>
+            <li><a href="../properties/properties.html">Properties</a></li>
+            <li><a href="../blog/blog.html">Latest Blog</a></li>
+            <li><a href="../contact/contact.html">Contact Us</a></li>
           </ul>
         </div>
 
@@ -211,20 +226,22 @@
     </footer>
 
     <script>
-      // Hamburger menu toggle
-      document
-        .querySelector(".nav-toggle")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.toggle("open");
-          this.classList.toggle("active");
-        });
-      // Close menu when a link is clicked
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+        this.classList.toggle("active");
+      });
+
       document.querySelectorAll(".nav-menu a").forEach(function (link) {
         link.addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.remove("open");
-          document.querySelector(".nav-toggle").classList.remove("active");
+          navMenu.classList.remove("open");
+          navToggle.classList.remove("active");
         });
       });
     </script>
+    <script src="../chat-wa-loader.js"></script>
+    <script src="../kpr-calculator.js"></script>
   </body>
 </html>

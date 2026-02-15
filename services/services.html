@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services</title>
+    <title>Services - PT GABE JAI PRO</title>
+
     <link rel="stylesheet" href="services.css" />
+
+    <link rel="stylesheet" href="../chat-wa.css" />
+    <link rel="stylesheet" href="../kpr-calculator.css" />
+    <link rel="stylesheet" href="../loader.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -15,7 +21,6 @@
     />
   </head>
   <body>
-    <!-- Navbar -->
     <nav>
       <div class="brand">
         <img
@@ -31,240 +36,258 @@
       <ul class="nav-menu">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about/About.html">About</a></li>
-        <li><a href="../services/services.html">Services</a></li>
+        <li>
+          <a
+            href="../services/services.html"
+            class="active"
+            style="color: #ffb703"
+            >Services</a
+          >
+        </li>
         <li><a href="../properties/properties.html">Properties</a></li>
         <li><a href="../blog/blog.html">Blog</a></li>
         <li><a href="../contact/contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="services-hero">
-      <img src="../images/services.png" alt="Services Hero" class="hero-bg" />
+    <main>
+      <section class="services-hero">
+        <img src="../images/services.png" alt="Services Hero" class="hero-bg" />
 
-      <div class="hero-header-text">
-        <h1>Our Services</h1>
-        <p class="breadcrumb">Home &gt; Services</p>
-      </div>
-    </section>
-
-    <div class="services-container">
-      <section class="hero-content">
-        <div class="hero-card">
-          <h1>Solusi lengkap untuk jual, beli & sewa properti</h1>
-          <p class="lead">
-            Kami membantu pemilik dan pembeli melalui proses yang jelas, cepat,
-            dan aman — mulai dari pemasaran properti hingga penandatanganan
-            kontrak.
-          </p>
-
-          <div class="cta-buttons">
-            <a class="btn" href="#contact">Konsultasi Gratis</a>
-            <a class="btn alt" href="#services-list">Lihat Layanan</a>
-          </div>
-
-          <div class="services-grid" id="services-list">
-            <article class="service-item">
-              <div class="icon">🏷️</div>
-              <div class="service-text">
-                <h3>Listing & Pemasaran</h3>
-                <p>
-                  Foto profesional, tur virtual 3D, pemasangan di portal
-                  properti & iklan target.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-item">
-              <div class="icon">🤝</div>
-              <div class="service-text">
-                <h3>Negosiasi & Penjualan</h3>
-                <p>
-                  Perwakilan negosiasi untuk dapatkan harga terbaik dan proses
-                  balik nama dokumen.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-item">
-              <div class="icon">🏢</div>
-              <div class="service-text">
-                <h3>Manajemen Properti</h3>
-                <p>
-                  Pelayanan sewa, pemeliharaan, pemungutan sewa dan laporan
-                  keuangan bulanan.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-item">
-              <div class="icon">📊</div>
-              <div class="service-text">
-                <h3>Penilaian & Konsultasi</h3>
-                <p>
-                  Estimasi nilai pasar, analisis lokasi, dan strategi investasi
-                  properti.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-item">
-              <div class="icon">📝</div>
-              <div class="service-text">
-                <h3>Legal & Dokumen</h3>
-                <p>
-                  Pendampingan legal, cek sertifikat, AJB, balik nama, dan
-                  pengurusan pajak.
-                </p>
-              </div>
-            </article>
-
-            <article class="service-item">
-              <div class="icon">💼</div>
-              <div class="service-text">
-                <h3>Investor Services</h3>
-                <p>
-                  Penawaran portofolio, due diligence, dan manajemen transaksi
-                  untuk investor.
-                </p>
-              </div>
-            </article>
-          </div>
+        <div class="hero-header-text">
+          <h1>Our Services</h1>
+          <p class="breadcrumb">Home &gt; Services</p>
         </div>
+      </section>
 
-        <aside class="contact-aside">
-          <div class="contact-form-box">
-            <h3 id="contact">Minta Penawaran</h3>
-            <form
-              id="penawaranForm"
-              action="https://formspree.io/f/yourFormID"
-              method="POST"
+      <div class="services-container">
+        <section class="hero-content">
+          <div class="hero-card">
+            <h1>Solusi lengkap untuk jual, beli & sewa properti</h1>
+            <p class="lead">
+              Kami membantu pemilik dan pembeli melalui proses yang jelas,
+              cepat, dan aman — mulai dari pemasaran properti hingga
+              penandatanganan kontrak.
+            </p>
+
+            <div class="cta-buttons">
+              <a class="btn" href="#contact-form-area">Konsultasi Gratis</a>
+              <a class="btn alt" href="#services-list">Lihat Layanan</a>
+            </div>
+
+            <div class="services-grid" id="services-list">
+              <article class="service-item">
+                <div class="icon">🏷️</div>
+                <div class="service-text">
+                  <h3>Listing & Pemasaran</h3>
+                  <p>
+                    Foto profesional, tur virtual 3D, pemasangan di portal
+                    properti & iklan target.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service-item">
+                <div class="icon">🤝</div>
+                <div class="service-text">
+                  <h3>Negosiasi & Penjualan</h3>
+                  <p>
+                    Perwakilan negosiasi untuk dapatkan harga terbaik dan proses
+                    balik nama dokumen.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service-item">
+                <div class="icon">🏢</div>
+                <div class="service-text">
+                  <h3>Manajemen Properti</h3>
+                  <p>
+                    Pelayanan sewa, pemeliharaan, pemungutan sewa dan laporan
+                    keuangan bulanan.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service-item">
+                <div class="icon">📊</div>
+                <div class="service-text">
+                  <h3>Penilaian & Konsultasi</h3>
+                  <p>
+                    Estimasi nilai pasar, analisis lokasi, dan strategi
+                    investasi properti.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service-item">
+                <div class="icon">📝</div>
+                <div class="service-text">
+                  <h3>Legal & Dokumen</h3>
+                  <p>
+                    Pendampingan legal, cek sertifikat, AJB, balik nama, dan
+                    pengurusan pajak.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service-item">
+                <div class="icon">💼</div>
+                <div class="service-text">
+                  <h3>Investor Services</h3>
+                  <p>
+                    Penawaran portofolio, due diligence, dan manajemen transaksi
+                    untuk investor.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="contact-aside" id="contact-form-area">
+            <div class="contact-form-box">
+              <h3>Minta Penawaran</h3>
+              <form
+                id="penawaranForm"
+                action="https://formspree.io/f/yourFormID"
+                method="POST"
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Nama lengkap"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="tel" name="phone" placeholder="Nomor telepon" />
+                </div>
+                <div class="form-group">
+                  <select name="service">
+                    <option value="Rumah Subsidi">Rumah Subsidi</option>
+                    <option value="Rumah Komersil">Rumah Komersil</option>
+                    <option value="Kavling">Kavling</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="Deskripsi singkat / lokasi properti"
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button class="btn full-width" type="submit">Kirim</button>
+                  <button
+                    class="btn alt full-width"
+                    type="button"
+                    id="resetBtn"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+          </aside>
+        </section>
+
+        <section class="process" aria-label="Proses kami">
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <strong>Konsultasi</strong>
+            <span>Analisis kebutuhan & penilaian awal</span>
+          </div>
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <strong>Pemasaran</strong>
+            <span>Listing, foto, tur virtual</span>
+          </div>
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <strong>Negosiasi</strong>
+            <span>Menjembatani pemilik & pembeli</span>
+          </div>
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <strong>Penandatanganan</strong>
+            <span>Pendampingan legal & serah terima</span>
+          </div>
+        </section>
+
+        <section class="testimonials">
+          <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">
+              Laku 2 minggu setelah difoto profesional — proses cepat dan
+              komunikasinya jelas.
+            </p>
+            <div class="testimonial-footer">
+              <img
+                src="../images/Novi.PNG"
+                alt="Foto Novi"
+                class="testimonial-photo"
+              />
+              <div class="testimonial-info">
+                <h3 class="testimonial-name">Novi</h3>
+                <span class="testimonial-role">Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">
+              Laporan investasi dan rekomendasinya membantu saya menambah
+              portofolio properti komersial.
+            </p>
+            <div class="testimonial-footer">
+              <img
+                src="../images/Achmad.PNG"
+                alt="Foto Achmad"
+                class="testimonial-photo"
+              />
+              <div class="testimonial-info">
+                <h3 class="testimonial-name">Achmad</h3>
+                <span class="testimonial-role">Supervisor</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="cta-box">
+          <div class="cta-text">
+            <h3>Siap menjual atau menyewa properti Anda?</h3>
+            <p>
+              Dapatkan estimasi gratis dan rencana pemasaran yang disesuaikan.
+            </p>
+          </div>
+          <div class="cta-action">
+            <a class="btn large" href="#contact-form-area"
+              >Minta Estimasi Gratis</a
             >
-              <div class="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nama lengkap"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" placeholder="Email" required />
-              </div>
-              <div class="form-group">
-                <input type="tel" name="phone" placeholder="Nomor telepon" />
-              </div>
-              <div class="form-group">
-                <select name="service">
-                  <option value="Rumah Subsidi">Rumah Subsidi</option>
-                  <option value="Rumah Komersil">Rumah Komersil</option>
-                  <option value="Kavling">Kavling</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="Deskripsi singkat / lokasi properti"
-                ></textarea>
-              </div>
-
-              <div class="form-actions">
-                <button class="btn full-width" type="submit">Kirim</button>
-                <button class="btn alt full-width" type="button" id="resetBtn">
-                  Reset
-                </button>
-              </div>
-            </form>
           </div>
-        </aside>
-      </section>
-
-      <section class="process" aria-label="Proses kami">
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-headset"></i>
-          </div>
-          <strong>Konsultasi</strong>
-          <span>Analisis kebutuhan & penilaian awal</span>
-        </div>
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-camera"></i>
-          </div>
-          <strong>Pemasaran</strong>
-          <span>Listing, foto, tur virtual</span>
-        </div>
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <strong>Negosiasi</strong>
-          <span>Menjembatani pemilik & pembeli</span>
-        </div>
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-file-signature"></i>
-          </div>
-          <strong>Penandatanganan</strong>
-          <span>Pendampingan legal & serah terima</span>
-        </div>
-      </section>
-
-      <section class="testimonials">
-        <div class="testimonial-card">
-          <div class="quote-icon">“</div>
-          <p class="testimonial-text">
-            Laku 2 minggu setelah difoto profesional — proses cepat dan
-            komunikasinya jelas.
-          </p>
-          <div class="testimonial-footer">
-            <img
-              src="../images/Novi.PNG"
-              alt="Foto Novi"
-              class="testimonial-photo"
-            />
-            <div class="testimonial-info">
-              <h3 class="testimonial-name">Novi</h3>
-              <span class="testimonial-role">Manager</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="quote-icon">“</div>
-          <p class="testimonial-text">
-            Laporan investasi dan rekomendasinya membantu saya menambah
-            portofolio properti komersial.
-          </p>
-          <div class="testimonial-footer">
-            <img
-              src="../images/Achmad.PNG"
-              alt="Foto Achmad"
-              class="testimonial-photo"
-            />
-            <div class="testimonial-info">
-              <h3 class="testimonial-name">Achmad</h3>
-              <span class="testimonial-role">Supervisor</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="cta-box">
-        <div class="cta-text">
-          <h3>Siap menjual atau menyewa properti Anda?</h3>
-          <p>
-            Dapatkan estimasi gratis dan rencana pemasaran yang disesuaikan.
-          </p>
-        </div>
-        <div class="cta-action">
-          <a class="btn large" href="#contact">Minta Estimasi Gratis</a>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-col footer-left">
@@ -301,12 +324,12 @@
         <div class="footer-col footer-middle">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about/About.html">About Us</a></li>
-            <li><a href="services/services.html">Our Services</a></li>
-            <li><a href="properties/properties.html">Properties</a></li>
-            <li><a href="blog/blog.html">Latest Blog</a></li>
-            <li><a href="contact/contact.html">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/About.html">About Us</a></li>
+            <li><a href="../services/services.html">Our Services</a></li>
+            <li><a href="../properties/properties.html">Properties</a></li>
+            <li><a href="../blog/blog.html">Latest Blog</a></li>
+            <li><a href="../contact/contact.html">Contact Us</a></li>
           </ul>
         </div>
 
@@ -376,19 +399,23 @@
     </script>
 
     <script>
-      // Hamburger menu toggle
-      document
-        .querySelector(".nav-toggle")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.toggle("open");
-          this.classList.toggle("active");
-        });
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+        this.classList.toggle("active");
+      });
+
       document.querySelectorAll(".nav-menu a").forEach(function (link) {
         link.addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.remove("open");
-          document.querySelector(".nav-toggle").classList.remove("active");
+          navMenu.classList.remove("open");
+          navToggle.classList.remove("active");
         });
       });
     </script>
+
+    <script src="../chat-wa-loader.js"></script>
+    <script src="../kpr-calculator.js"></script>
   </body>
 </html>
