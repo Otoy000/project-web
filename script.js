@@ -1,25 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slides = [
     {
-      image: "images/bg1.png",
+      image: "images/BG1.png",
       title: "Cara Termudah <br>Mencari Properti",
       subtitle:
         "Temukan rumah impian Anda bersama PT GABE JAI PRO. Dipercaya oleh ribuan orang, memberikan penawaran properti terbaik untuk Anda.",
     },
     {
-      image: "images/bg2.png",
+      image: "images/BG2.png",
       title: "Hidup Indah <br>Bersama Keluarga",
       subtitle:
         "Nikmati setiap momen berharga bersama orang tercinta di rumah yang nyaman dan penuh kehangatan.",
     },
     {
-      image: "images/bg3.png",
+      image: "images/BG3.png",
       title: "Nyaman Hari Ini, <br>Investasi Esok",
       subtitle:
         "Hunian di lingkungan asri yang tidak hanya nyaman ditinggali, tapi juga bernilai tinggi untuk masa depan.",
     },
     {
-      image: "images/bg4.png",
+      image: "images/BG4.png",
       title: "Ruang Nyaman, <br>Hidup Lebih Tenang",
       subtitle:
         "Desain modern minimalis untuk kenyamanan Anda, menciptakan suasana rumah yang damai setiap hari.",
