@@ -437,14 +437,8 @@ nav .nav-menu li a:hover::after {
     opacity: 1;
   }
 }
-/* ========= SERVICES ========= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 
+/* ========= SERVICES ========= */
 .ftco-section {
   padding: 60px 0 30px 0;
   background: linear-gradient(135deg, #0a2540, #102c54);
@@ -559,6 +553,28 @@ nav .nav-menu li a:hover::after {
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mengatur Subheading agar 1 Baris */
+  .subheading {
+    font-size: 1.5rem; /* Ukuran dinamis mengikuti lebar layar (sekitar 14px-18px) */
+    white-space: nowrap; /* PAKSA teks tidak boleh turun baris */
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* Opsional: Kecilkan sedikit judul "Our Services" agar seimbang */
+  .heading-section {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  /* Kurangi padding section agar tidak terlalu tinggi di HP */
+  .ftco-section {
+    padding: 40px 0 20px 0;
   }
 }
 
@@ -961,6 +977,7 @@ nav .nav-menu li a:hover::after {
   transform: scale(1.02) rotate(1deg);
 }
 
+/* Container Text (Card) */
 .about-text {
   flex: 1 1 400px;
   background: rgba(255, 255, 255, 0.05);
@@ -969,8 +986,15 @@ nav .nav-menu li a:hover::after {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* --- PERUBAHAN UTAMA DI SINI --- */
+  text-align: center; /* Membuat semua isi di dalam card jadi rata tengah */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Memastikan elemen flex juga di tengah */
 }
 
+/* Judul PT GABE JAI PRO */
 .about-text h2 {
   font-size: clamp(2rem, 3vw, 2.8rem);
   margin-bottom: 25px;
@@ -978,14 +1002,21 @@ nav .nav-menu li a:hover::after {
   font-family: "Playfair Display", serif;
   color: #f5c542;
   line-height: 1.2;
+
+  /* Pastikan judul rata tengah */
+  text-align: center;
+  width: 100%;
 }
 
+/* Paragraf Visi Misi */
 .about-text p {
   font-size: 1rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
-  text-align: justify;
+
+  /* --- UBAH DARI JUSTIFY KE CENTER --- */
+  text-align: center;
 }
 
 .about-text p:last-child {
@@ -999,7 +1030,7 @@ nav .nav-menu li a:hover::after {
   }
 
   .about-wrapper {
-    flex-direction: column;
+    flex-direction: column; /* Menyusun gambar dan teks vertikal */
     gap: 30px;
   }
 
@@ -1016,6 +1047,9 @@ nav .nav-menu li a:hover::after {
 
   .about-text {
     padding: 25px 20px;
+    /* Tambahan: Pastikan container pembungkus juga rata tengah */
+    text-align: center;
+    align-items: center;
   }
 
   .about-text h2 {
@@ -1024,7 +1058,10 @@ nav .nav-menu li a:hover::after {
 
   .about-text p {
     font-size: 0.95rem;
-    text-align: left;
+
+    /* --- PERUBAHAN DI SINI --- */
+    /* Mengubah dari 'left' menjadi 'center' */
+    text-align: center;
   }
 }
 
