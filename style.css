@@ -557,22 +557,18 @@ nav .nav-menu li a:hover::after {
 }
 
 @media (max-width: 768px) {
-  /* Mengatur Subheading agar 1 Baris */
   .subheading {
-    font-size: 1.5rem; /* Ukuran dinamis mengikuti lebar layar (sekitar 14px-18px) */
-    white-space: nowrap; /* PAKSA teks tidak boleh turun baris */
+    font-size: 1.5rem;
+    white-space: nowrap;
     display: inline-block;
     width: auto;
     max-width: 100%;
   }
 
-  /* Opsional: Kecilkan sedikit judul "Our Services" agar seimbang */
   .heading-section {
     font-size: 2rem;
     margin-bottom: 5px;
   }
-
-  /* Kurangi padding section agar tidak terlalu tinggi di HP */
   .ftco-section {
     padding: 40px 0 20px 0;
   }
