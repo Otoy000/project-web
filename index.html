@@ -74,13 +74,18 @@
 </nav>
 
 <section id="hero-section" class="hero-wrap">
+
+  <!-- Background image layer -->
+  <div class="hero-bg"></div>
+
+  <!-- Overlay -->
   <div class="overlay"></div>
 
   <div class="container h-100">
     <div class="row h-100 align-items-center justify-content-center">
       <div class="col-lg-10 text-center content-wrapper">
-        
-        <div class="mb-4">
+
+      <div class="mb-4">
           <img src="images/logo/logo.png" alt="Logo" class="hero-logo">
         </div>
 
@@ -107,10 +112,10 @@
               </div>
             </div>
         </form>
-
       </div>
     </div>
   </div>
+
 </section>
 
   <!-- Services Section -->
@@ -577,112 +582,7 @@
 </footer>
 
 
-<script>
-  // 👉 Ganti dengan endpoint Formspree punyamu
-  const scriptURL = "https://formspree.io/f/manpwrnz";  
-  const form = document.getElementById("newsletterForm");
-  const message = document.getElementById("message");
-
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-
-    const email = document.getElementById("emailInput").value;
-
-    fetch(scriptURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email })
-    })
-    .then(res => {
-      if (res.ok) {
-        message.textContent = "✅ Terima kasih, email kamu berhasil dikirim!";
-        message.style.color = "limegreen";
-        form.reset();
-      } else {
-        message.textContent = "❌ Gagal menyimpan email.";
-        message.style.color = "red";
-      }
-    })
-    .catch(err => {
-      console.error("Error!", err);
-      message.textContent = "❌ Terjadi kesalahan koneksi.";
-      message.style.color = "red";
-    });
-  });
-</script>
-  
-  <script>
-
-   document.addEventListener('DOMContentLoaded', function() {
-  // ===== FAQ Accordion =====
-  const faqItems = document.querySelectorAll(".faq-item");
-  faqItems.forEach(item => {
-    const question = item.querySelector(".faq-question");
-    if (question) {
-      question.addEventListener("click", () => {
-        // Tutup semua item lain dulu
-        faqItems.forEach(el => {
-          if (el !== item) el.classList.remove("active");
-        });
-        // Toggle item yang diklik
-        item.classList.toggle("active");
-      });
-    }
-  });
-
-  // ===== Tombol Search =====
-  const searchBtn = document.getElementById('searchBtn');
-  const propertySelect = document.getElementById('propertyType');
-
-  if (searchBtn && propertySelect) {
-    searchBtn.addEventListener('click', function() {
-      const selectedText = propertySelect.value.trim();
-
-      switch(selectedText) {
-        case "Rumah Subsidi":
-          window.location.href = "listing-rumah/listing-rumah-subsidi.html";
-          break;
-        case "Rumah Komersil":
-          window.location.href = "listing-rumah/listing-rumah-komersil.html";
-          break;
-        case "Kavling":
-          window.location.href = "listing-rumah/listing-tanah-kavling.html";
-          break;
-        default:
-          alert("Silakan pilih tipe properti terlebih dahulu!");
-      }
-    });
-  }
-
-});
-
- // Tunggu sampai semua konten utama halaman selesai dimuat
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if (loader) {
-      // Tambahkan delay kecil untuk efek cinematic smooth
-      setTimeout(() => {
-        loader.classList.add('hide');
-      }, 800); // 0.8 detik delay sebelum fade out
-    }
-  });
-
-</script>
-
-  <script>
-    // Hamburger menu toggle
-    document.querySelector('.nav-toggle').addEventListener('click', function() {
-      document.querySelector('.nav-menu').classList.toggle('open');
-      this.classList.toggle('active');
-    });
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-menu a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.querySelector('.nav-menu').classList.remove('open');
-        document.querySelector('.nav-toggle').classList.remove('active');
-      });
-    });
-  </script>
+  <script src="main.js" defer></script>
   <script src="pagination.js" defer></script>
   <script src="chat-wa-loader.js" defer></script>
   <script src="script.js" defer></script>
