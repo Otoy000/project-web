@@ -1,5 +1,9 @@
 /* ========= GLOBAL STYLE ========= */
 
+body.loading > *:not(#loader) {
+  display: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;

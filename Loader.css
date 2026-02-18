@@ -1,19 +1,31 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.loading > *:not(#loader) {
+  display: none !important;
+  overflow: hidden;
+  height: 100vh;
+}
 /* ===== Ultra-Premium Cinematic Estate Loader – Fullscreen ===== */
 #loader {
   position: fixed;
-  inset: 0; /* ⬅ PENTING */
+  inset: 0;
   width: 100vw;
-  height: 100dvh; /* ⬅ FIX MOBILE */
+  height: 100vh; /* ⬅ JANGAN 100dvh di sini */
   background: linear-gradient(135deg, #0b0f1f, #1e2530);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 99999;
+  z-index: 2147483647; /* ⬅ MAX Z-INDEX */
   opacity: 1;
+  visibility: visible;
   transition:
-    opacity 0.8s ease,
-    visibility 0.8s ease;
+    opacity 0.6s ease,
+    visibility 0.6s ease;
   animation: bgPulse 8s infinite alternate;
 }
 
