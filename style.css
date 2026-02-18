@@ -243,13 +243,12 @@ nav .nav-menu li a:hover::after {
   justify-content: center;
   text-align: center;
 
-  /* Setup Background Awal */
-  background-image: url("images/BG1.png"); /* Pastikan nama file SAMA PERSIS besar kecilnya */
+  /* PERBAIKAN: Gunakan .jpg dan huruf kecil */
+  background-image: url("images/BG1.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  /* Transisi Halus saat ganti gambar */
   transition: background-image 1s ease-in-out;
 }
 
