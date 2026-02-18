@@ -524,6 +524,7 @@ nav .nav-menu li a:hover::after {
 }
 
 /* === ABOUT TEXT === */
+/* === ABOUT TEXT === */
 .about-text {
   flex: 1;
   background: rgba(255, 255, 255, 0.05);
@@ -532,6 +533,8 @@ nav .nav-menu li a:hover::after {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Tambahkan ini jika ingin memastikan semua konten di dalam card rata tengah */
+  text-align: center;
 }
 
 .about-text h2 {
@@ -540,6 +543,8 @@ nav .nav-menu li a:hover::after {
   font-weight: 800;
   color: #f9d423;
   line-height: 1.2;
+  /* Memastikan judul selalu di tengah */
+  text-align: center;
 }
 
 .about-text p {
@@ -547,7 +552,8 @@ nav .nav-menu li a:hover::after {
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
-  text-align: justify;
+  /* UBAH DARI justify MENJADI center */
+  text-align: center;
 }
 
 .about-text p:last-child {
