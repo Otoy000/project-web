@@ -244,7 +244,7 @@ nav .nav-menu li a:hover::after {
   text-align: center;
 
   /* Setup Background Awal */
-  background-image: url("images/BG1.PNG"); /* Pastikan nama file SAMA PERSIS besar kecilnya */
+  background-image: url("images/BG1.png"); /* Pastikan nama file SAMA PERSIS besar kecilnya */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
