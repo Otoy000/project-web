@@ -422,6 +422,10 @@ nav .nav-menu li a:hover::after {
 }
 
 @media (max-width: 768px) {
+  .hero-bg {
+    background-position: 40% center;
+  }
+
   .hero-wrap {
     min-height: 550px;
   }
