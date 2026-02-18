@@ -1,73 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // --- 1. DATA SLIDE ---
   const slides = [
     {
-      image: "images/BG1.png",
+      img: "images/BG1.png",
       title: "Cara Termudah <br>Mencari Properti",
-      subtitle:
-        "Temukan rumah impian Anda bersama PT GABE JAI PRO. Dipercaya oleh ribuan orang, memberikan penawaran properti terbaik untuk Anda.",
+      desc: "Temukan rumah impian Anda bersama PT GABE JAI PRO. Dipercaya oleh ribuan orang.",
     },
     {
-      image: "images/BG2.png",
+      img: "images/BG2.png",
       title: "Hidup Indah <br>Bersama Keluarga",
-      subtitle:
-        "Nikmati setiap momen berharga bersama orang tercinta di rumah yang nyaman dan penuh kehangatan.",
+      desc: "Nikmati setiap momen berharga bersama orang tercinta di rumah yang nyaman.",
     },
     {
-      image: "images/BG3.png",
-      title: "Nyaman Hari Ini, <br>Investasi Esok",
-      subtitle:
-        "Hunian di lingkungan asri yang tidak hanya nyaman ditinggali, tapi juga bernilai tinggi untuk masa depan.",
-    },
-    {
-      image: "images/BG4.png",
-      title: "Ruang Nyaman, <br>Hidup Lebih Tenang",
-      subtitle:
-        "Desain modern minimalis untuk kenyamanan Anda, menciptakan suasana rumah yang damai setiap hari.",
+      img: "images/BG3.png",
+      title: "Investasi Cerdas <br>Untuk Masa Depan",
+      desc: "Hunian di lingkungan asri yang bernilai investasi tinggi.",
     },
   ];
 
-  // Preload gambar
+  // --- 2. PRELOAD GAMBAR ---
   slides.forEach((slide) => {
-    const img = new Image();
-    img.src = slide.image;
+    new Image().src = slide.img;
   });
 
-  let currentIndex = 0;
-  const heroSection = document.querySelector(".hero-wrap");
-
-  // 👉 Script mencari elemen ini. Kalau HTML Langkah 1 tidak diupdate, ini akan Error/Null
-  const textContent = document.getElementById("text-content");
+  // --- 3. AMBIL ELEMEN DARI HTML ---
+  const heroSection = document.getElementById("hero-section");
+  const dynamicContent = document.getElementById("dynamic-content");
   const titleEl = document.getElementById("hero-title");
-  const subtitleEl = document.getElementById("hero-subtitle");
+  const descEl = document.getElementById("hero-subtitle");
 
+  let i = 0;
+
+  // --- 4. FUNGSI GANTI SLIDE ---
   function changeSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    const nextSlide = slides[currentIndex];
+    i = (i + 1) % slides.length;
+    const currentSlide = slides[i];
+    heroSection.style.backgroundImage = `url('${currentSlide.img}')`;
 
-    // 1. Ganti Gambar
-    if (heroSection) {
-      heroSection.style.backgroundImage = `url('${nextSlide.image}')`;
-    }
+    dynamicContent.classList.add("fade-out");
 
-    // 2. Ganti Teks (Cek apakah textContent ditemukan?)
-    if (textContent) {
-      // Fade Out (Hilang)
-      textContent.classList.add("hidden");
+    setTimeout(() => {
+      titleEl.innerHTML = currentSlide.title;
+      descEl.innerHTML = currentSlide.desc;
 
-      // Tunggu 0.5 detik (sesuai CSS transition), baru ganti teks
-      setTimeout(() => {
-        if (titleEl) titleEl.innerHTML = nextSlide.title;
-        if (subtitleEl) subtitleEl.textContent = nextSlide.subtitle;
-
-        // Fade In (Muncul)
-        textContent.classList.remove("hidden");
-      }, 500);
-    } else {
-      console.error(
-        "Elemen id='text-content' tidak ditemukan! Cek file HTML Anda.",
-      );
-    }
+      dynamicContent.classList.remove("fade-out");
+    }, 500);
   }
-
   setInterval(changeSlide, 5000);
 });

@@ -233,101 +233,103 @@ nav .nav-menu li a:hover::after {
   }
 }
 
-/* ========= HERO ========= */
+/* ========= GLOBAL RESET ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= HERO WRAPPER ========= */
 .hero-wrap {
-  min-height: 100vh;
-  padding: 120px 40px;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("images/BG1.png");
+  transition: background-image 1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-
-  /* PERBAIKAN: Gunakan .jpg dan huruf kecil */
-  background-image: url("images/BG1.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  transition: background-image 1s ease-in-out;
 }
 
+/* ========= OVERLAY ========= */
 .hero-wrap .overlay {
-  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.45));
+  background: linear-gradient(
+    180deg,
+    rgba(50, 50, 50, 0.9),
+    rgba(30, 30, 30, 0.85)
+  );
   z-index: 1;
 }
 
-.hero-wrap .text {
+/* ========= CONTENT WRAPPER ========= */
+.content-wrapper {
   position: relative;
   z-index: 2;
-  width: 100%;
+  text-align: center;
 }
 
-/* Animasi Teks */
-#text-content {
-  transition:
-    opacity 0.5s ease-in-out,
-    transform 0.5s ease-in-out;
+/* ========= LOGO ========= */
+.hero-logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ========= DYNAMIC CONTENT (ANTI LONCAT) ========= */
+#dynamic-content {
+  min-height: 220px; /* KUNCI TINGGI AREA TEKS */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* Class untuk menyembunyikan teks saat transisi */
-#text-content.hidden {
+#dynamic-content.fade-out {
   opacity: 0;
-  transform: translateY(20px);
+  pointer-events: none;
 }
 
+/* ========= HERO TITLE ========= */
 #hero-title {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+  min-height: 130px; /* KUNCI TINGGI JUDUL */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-weight: 800;
+  font-size: 3.5rem;
   line-height: 1.2;
-  color: #fff;
-  background: linear-gradient(90deg, #ffb703, #fb8500);
+  text-transform: capitalize;
+  text-align: center;
+
+  background: linear-gradient(to right, #ffa500, #ff8c00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
 }
 
+/* ========= HERO SUBTITLE ========= */
 #hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 35px;
-  color: #f5f5f5;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* Responsive Text */
-@media (max-width: 768px) {
-  #hero-title {
-    font-size: 2.2rem;
-  }
-  #hero-subtitle {
-    font-size: 1rem;
-  }
-}
-
-.hero-logo {
-  height: 150px;
-  width: auto;
-  display: inline-block;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .hero-logo {
-    height: 60px;
-  }
-}
-
-/* ========= SEARCH FORM ========= */
+/* ========= SEARCH FORM (TIDAK DIUBAH STYLE-NYA) ========= */
 .search-location {
   margin-top: 2rem;
   padding: 0 20px;
@@ -395,12 +397,21 @@ nav .nav-menu li a:hover::after {
 
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {
-  .hero-wrap h1 {
-    font-size: 2.2rem;
+  #dynamic-content {
+    min-height: 180px;
   }
 
-  .hero-wrap p {
+  #hero-title {
+    min-height: 100px;
+    font-size: 2rem;
+  }
+
+  #hero-subtitle {
     font-size: 1rem;
+  }
+
+  .hero-logo {
+    height: 70px;
   }
 
   .search-location .form-field {
@@ -413,27 +424,6 @@ nav .nav-menu li a:hover::after {
   .search-location select,
   .search-location button {
     width: 100%;
-  }
-}
-
-/* ========= ANIMATIONS ========= */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -1640,58 +1630,63 @@ nav .nav-menu li a:hover::after {
 .footer {
   background: #0b1623;
   color: #b0b0b0;
-  padding: 70px 0 0;
+  padding: 40px 0 0;
   font-size: 0.95rem;
-  position: relative;
-  margin-top: 50px;
-  margin-top: 0;
 }
 
+/* ===== FOOTER CONTAINER ===== */
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5%;
-  gap: 40px;
+  padding: 0 5% 60px;
+
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr; /* kiri lebih lebar */
+  gap: 60px;
+  align-items: start;
 }
 
-/* Kolom Footer */
+/* ===== FOOTER COLUMN ===== */
 .footer-col {
-  flex: 1;
-  min-width: 250px;
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* === LEFT SECTION (BRAND & CONTACT) === */
+/* ===== LEFT (BRAND & CONTACT) ===== */
 .footer-brand {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
 .company-desc {
-  line-height: 1.6;
-  margin-bottom: 25px;
+  line-height: 1.7;
+  margin-bottom: 30px;
   color: #ccc;
+}
+
+/* CONTACT */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
-  margin-bottom: 15px;
+  line-height: 1.6;
   color: #ddd;
 }
 
 .contact-item i {
   color: #ffb703;
   font-size: 1.1rem;
-  width: 20px;
-  text-align: center;
+  min-width: 20px;
+  margin-top: 3px;
 }
 
 .contact-item a {
@@ -1704,20 +1699,19 @@ nav .nav-menu li a:hover::after {
   color: #ffb703;
 }
 
-/* === MIDDLE SECTION (MENU) === */
+/* ===== MIDDLE (QUICK LINKS) ===== */
 .footer h3 {
   color: #fff;
   font-size: 1.3rem;
   margin-bottom: 25px;
   position: relative;
-  display: inline-block;
 }
 
 .footer h3::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -8px;
+  bottom: -10px;
   width: 40px;
   height: 2px;
   background: #ffb703;
@@ -1726,29 +1720,29 @@ nav .nav-menu li a:hover::after {
 .footer-middle ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-middle li {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer-middle a {
   color: #b0b0b0;
   text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
+  transition: 0.3s ease;
 }
 
 .footer-middle a:hover {
   color: #ffb703;
-  transform: translateX(5px);
+  padding-left: 6px;
 }
 
-/* === RIGHT SECTION (SOCIAL) === */
+/* ===== RIGHT (SOCIAL & LEGAL) ===== */
 .social-links {
   display: flex;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .social-links a {
@@ -1773,24 +1767,31 @@ nav .nav-menu li a:hover::after {
   box-shadow: 0 5px 15px rgba(255, 183, 3, 0.4);
 }
 
-.legal-links p {
-  margin-bottom: 8px;
+/* LEGAL */
+.legal-links h3 {
+  margin-bottom: 18px;
 }
+
+.legal-links p {
+  margin-bottom: 10px;
+}
+
 .legal-links a {
   color: #888;
   text-decoration: none;
   font-size: 0.9rem;
+  transition: 0.3s;
 }
+
 .legal-links a:hover {
   color: #ffb703;
 }
 
-/* === FOOTER BOTTOM === */
+/* ===== FOOTER BOTTOM ===== */
 .footer-bottom {
   background: #050d15;
   text-align: center;
   padding: 25px 0;
-  margin-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1804,15 +1805,21 @@ nav .nav-menu li a:hover::after {
   color: #fff;
 }
 
-/* === RESPONSIVE MOBILE === */
-@media (max-width: 768px) {
+/* ===== RESPONSIVE (TABLET & MOBILE) ===== */
+@media (max-width: 992px) {
   .footer-container {
-    flex-direction: column;
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .contact-item {
-    justify-content: center;
+  .footer-left {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .footer h3::after {
@@ -1820,12 +1827,16 @@ nav .nav-menu li a:hover::after {
     transform: translateX(-50%);
   }
 
+  .contact-item {
+    justify-content: center;
+    text-align: left;
+  }
+
   .social-links {
     justify-content: center;
   }
 
   .footer-middle a:hover {
-    transform: none;
-    color: #ffb703;
+    padding-left: 0;
   }
 }
