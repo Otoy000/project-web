@@ -2,17 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- 1. DATA SLIDE ---
   const slides = [
     {
-      img: "/images/BG1.png",
+      img: "/images/bg1.png",
       title: "Cara Termudah <br>Mencari Properti",
       desc: "Temukan rumah impian Anda bersama PT GABE JAI PRO. Dipercaya oleh ribuan orang.",
     },
     {
-      img: "/images/BG2.png",
+      img: "/images/bg2.png",
       title: "Hidup Indah <br>Bersama Keluarga",
       desc: "Nikmati setiap momen berharga bersama orang tercinta di rumah yang nyaman.",
     },
     {
-      img: "/images/BG3.png",
+      img: "/images/bg3.png",
       title: "Investasi Cerdas <br>Untuk Masa Depan",
       desc: "Hunian di lingkungan asri yang bernilai investasi tinggi.",
     },
