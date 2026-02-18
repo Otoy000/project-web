@@ -397,6 +397,10 @@ nav .nav-menu li a:hover::after {
 
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {
+  .hero-wrap {
+    background-position: 45% center;
+  }
+
   #dynamic-content {
     min-height: 180px;
   }
